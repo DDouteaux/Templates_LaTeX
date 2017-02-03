@@ -1,0 +1,37 @@
+\subsection{Inclure des PDF}
+\subsubsection{Packages utilisés}
+Le package recommandé ici est \texttt{pdfpages}, qui permet d'insérer des pages d'un PDF (éventuellement le document entier), selon des dispositions précisées par l'utilisateur.
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+  \usepackage{pdfpages} % Pour inclure des pages d'un PDF
+\end{lstlisting}
+
+\subsubsection{Exemple de commandes}
+Nous ne détaillerons pas outre mesure le fonctionnement du package pour le moment. Voici cependant dans un premier temps pour l'insertion de toutes les pages d'un document selon une grille $2\times3$ :
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+  \includepdf[pages=-, nup=2x3]{chemin_relatif_vers_pdf}
+\end{lstlisting}
+
+On notera ici le \texttt{pages=-} qui permet d'insérer toutes les pages du documents. Si nous avions (pas exemple) voulu insérer que les pages 10 à 20, nous aurions pu écrire:
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+  \includepdf[pages=10-20, nup=2x3]{chemin_relatif_vers_pdf}
+\end{lstlisting}
+
+\subsubsection{Retourner les pages}
+Si vous avez pas exemple besoin d'effectuer une rotation sur les pages que vous insérez, vous pouvez utiliser l'option \texttt{angle}, comme dans cet exemple :
+\begin{lstlisting}[language={[LaTeX]TeX}]
+  \includepdf[pages=10-20, nup=2x3, angle=-90]{chemin_relatif_vers_pdf}
+\end{lstlisting}
+
+\subsubsection{Pour aller plus loin}
+Si vous désirez en savoir plus, rendez-vous à la documentation de ce package, à l'adresse suivante :
+\begin{center}
+  \texttt{http://www.texdoc.net/texmf-dist/doc/latex/pdfpages/pdfpages.pdf}
+\end{center}
+  
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "../../Fiches_techniques_LaTeX"
+%%% End:
