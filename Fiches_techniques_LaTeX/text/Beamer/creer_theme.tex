@@ -1,0 +1,196 @@
+\subsection{Créer son propre thème Beamer}
+\subsubsection{Généralités}
+À titre de démonstration, un utilisateur de \texttt{tex.stackexchange} fournit un exemple de création de template pour Beamer en une heure. Cet exemple peut servir de base à des constructions plus complexes.
+
+De nombreuses améliorations peuvent être apportées au code proposé, qui l'est ici à titre d'exemple. Pour l'exemple, le nouveau thème créé sera nommé \texttt{texsx}. Pour cela, on commence par créer les fichiers suivants dans le répertoire du thème :\begin{itemize}
+\itemperso{\texttt{beamercolortheme\vColor{texsx}.sty}}
+\itemperso{\texttt{beamerinnertheme\vColor{texsx}.sty}}
+\itemperso{\texttt{beameroutertheme\vColor{texsx}.sty}}
+\itemperso{\texttt{beamertheme\vColor{texsx}.sty}}
+\itemperso{\texttt{test.tex}}Pour tester le template créé.
+\end{itemize}
+Pour créer ce template, nous pourrons par exemple utilisé TikZ, tant pour sa puissance que pour sa rapidité d'exécution.
+
+\subsubsection{Objectif}
+Le but est de réussir à compiler un document pour Beamer de la forme suivante, avec page de titre, blocs, listes,...
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\title{There Is No Largest Prime Number}
+\date[ISPN ’80]{27th International Symposium of Prime Numbers}
+\author[Euclid]{Euclid of Alexandria \texttt{euclid@alexandria.edu}}
+
+\usetheme{texsx}
+
+\begin{document}
+
+\begin{frame}
+	\titlepage
+\end{frame}
+
+
+\begin{frame} 
+	\frametitle{There Is No Largest Prime Number} 
+	\framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
+	\begin{theorem}
+	There is no largest prime number. \end{theorem} 
+	\begin{enumerate} 
+		\item<1-| alert@1> Suppose $p$ were the largest prime number. 
+		\item<2-> Let $q$ be the product of the first $p$ numbers. 
+		\item<3-> Then $q+1$ is not divisible by any of them. 
+		\item<1-> But $q + 1$ is greater than $1$, thus divisible by some prime
+			number not in the first $p$ numbers.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{A longer title}
+	\begin{itemize}
+		\item one
+		\item two
+	\end{itemize}
+\end{frame}
+
+\end{document}
+\end{lstlisting}
+
+\subsubsection{Fichier \texttt{beamerthemetexsx.sty}}
+Ce fichier permet de charger les fichiers de thèmes, et de définir certaines configurations générales (comme les symboles de navigation), ou de configurer en partie les blocs d'affichage. Un exemple vous est fourni ci-dessous :
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+
+% Settings
+\useinnertheme{texsx}
+\useoutertheme{texsx}
+\usecolortheme{texsx}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true]  
+
+\mode<all>
+\end{lstlisting}
+
+\subsubsection{Slide de titre}
+Le style pour cette slide est défini dans le fichier \texttt{inner}. L'idée est ici d'exploiter les éléments suivants :\begin{itemize}
+	\itemperso{}Utiliser le template \texttt{background} pour le fond de la slide de titre.
+	\itemperso{}Définir un template \texttt{title page} dans lequel le titre, l'auteur et la date sont remplis.
+\end{itemize}
+D'un point de vue pratique, ces opérations se concrétisent avec le code suivant à insérer dans le fichier \texttt{beamerinnerthemetexsx.sty} :
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\mode<presentation>
+
+\setbeamertemplate{background}{
+	  \begin{tikzpicture}
+		    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+		      \fill[color=brown] (0,2) rectangle (\the\paperwidth,\the\paperheight);
+		        \fill[color=orange] (0,0) rectangle(2.95,1.9);
+			  \fill[color=blue!50!cyan!80] (3.05,0) rectangle(\the\paperwidth,1.9);
+			    \ifnum\thepage>1\relax%
+			       \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+			          \fi
+				    \end{tikzpicture}
+				    }
+
+				    % Title page
+				    \defbeamertemplate*{title page}{texsx}[1][]
+				    { 
+				       \vskip6cm%
+				           \begin{beamercolorbox}[wd=12cm,leftskip=3cm,sep=8pt,#1]{title page header}
+						         \usebeamerfont{title}\inserttitle\par%
+							     \end{beamercolorbox}%
+							         \vskip0.75cm%
+								     \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{author}
+									           \usebeamerfont{author}\insertauthor%
+										       \end{beamercolorbox}
+										            \vskip0.2cm%
+											        \begin{beamercolorbox}[wd=12cm,leftskip=3cm,#1]{date}
+													      \usebeamerfont{author}\insertdate%
+													          \end{beamercolorbox}
+														    \vfill
+														    }
+
+														    \mode
+														    <all>
+\end{lstlisting}
+
+Il est important de remarquer que l'on définit manuellement la boîte délimitante avec la commande \texttt{\textbackslash useasboundingbox (0,0) rectangle(\textbackslash the\textbackslash paperwidth,\textbackslash the\textbackslash paperheight);}, ensuite, en utilisant un test sur le numéro de page, on peut appliquer ce style uniquement pour la page de titre.
+
+On dispose ensuite les éléments du template \texttt{title page} où il faut. De plus, on caractérise les couleurs des différents éléments \texttt{beamercolorboxes}, \texttt{title page header}, \texttt{author} et \texttt{date}. Il nous faut donc ces définitions que l'on ajoute à \texttt{beamercolorthemetextsx.sty}.
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\mode<presentation>
+
+% Settings
+\setbeamercolor*{title page header}{fg=white}
+\setbeamercolor*{author}{fg=white}
+\setbeamercolor*{date}{fg=white}
+
+\mode
+<all>
+\end{lstlisting}
+
+En compilant, on obtient alors une slide de titre avec l'aspect défini comme à la Figure~\ref{fig:beamer-custom-title-slide}.
+
+\begin{figure}[ht]
+\centering
+	\includegraphics[width=.5\textwidth]{images/Beamer/custom-title-slide}
+	\caption{Aspect de la slide de titre du template}
+	\label{fig:beamer-custom-title-slide}
+\end{figure}
+
+Nous pouvons alors regarder le cas des slides du corps de la présentation.
+
+\subsubsection{Slide générique}
+\subParagraphe{Aspect du titre des slides}Ceci se fait via un template appelé \texttt{frametitle}. Ce dernier doit être précisé dans le fichier \texttt{beamerouterthemetexsx.sty}, par exemple :
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\mode<presentation>
+
+% Frame title
+\defbeamertemplate*{frametitle}{texsx}[1][]
+{
+	\vskip1cm%
+	  \begin{beamercolorbox}[wd=\paperwidth,ht=1.2cm]{frametitle} 
+		    \begin{tikzpicture}
+			      \useasboundingbox[fill=white](0,0) rectangle(\the\paperwidth,1.2);
+			        \fill[orange] (0,0) rectangle(2.95,1.2);
+				  \fill[blue!50!cyan!80] (3.05,0) rectangle(\the\paperwidth,1.2);
+				     \ifx\insertframesubtitle\@empty%
+				           {\node[anchor=west, white,font=\large] at (3.2,0.61){\insertframetitle};}
+					         \else%
+						       {\node[anchor= west, white,font=\large] at (3.2,0.81){\insertframetitle};%
+						              \node[anchor= west, white,font=\small] at (3.2,0.41){\insertframesubtitle};}%
+							            \fi
+								      \end{tikzpicture}
+								        \end{beamercolorbox}
+									}
+
+									\mode<all>
+\end{lstlisting}
+
+Pour faire simple, on exploite le même concept que pour \texttt{titlepage} pour dessiner quelques boîtes, puis on vérifie s'il y a ou non un sous-titre. On définit alors la position du titre et du sous-titre en fonction de cette réponse. Le tout est géré avec des n\oe uds TikZ.
+
+\subParagraphe{Divers éléments}Dans le document d'exemple proposé, on remarque la présence de listes. Ces dernières peuvent être paramétrées avec la commande :
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+\setbeamercolor*{item}{fg=orange}
+\end{lstlisting}
+
+Cette commande est à ajouter au fichier \texttt{beamercolorthemetexsx.sty}. On ajoute également la définition des formes des items dans le fichier \texttt{beamerinnerthemetexsx.sty} :
+
+\begin{lstlisting}[language={[LaTeX]TeX}]
+% Items
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+\end{lstlisting}
+
+Il n'est pas obligatoire que ces déclarations soient dans ce fichier, ceci semble cependant être une norme dans la communauté qui a développé les principaux thèmes Beamer.
+
+On peut alors compiler l'intégralité de la présentation avec notre thème. Des modifications et améliorations peuvent être apportées au thème, qui sont laissées au lecteur intéressé de le faire.
+
