@@ -1,9 +1,39 @@
 \mode<presentation>
 
+
+\definecolor{themeColor}{RGB}{0,82,148}
+\definecolor{vertforet}{RGB}{20,83,20}
+\definecolor{vvertforet}{RGB}{0,107,47}
+\definecolor{bordeau}{RGB}{199,16,26}
+\definecolor{gris}{RGB}{195,195,195}
+\definecolor{bluenight}{RGB}{0,82,148}
+\definecolor{violet}{RGB}{112,4,98}
+\definecolor{amber}{RGB}{255,110,0}
+\definecolor{mygray}{RGB}{125,125,125}
+
+\newcommand{\currentColor}{themeColor}
+\newcommand\thColor[1]{\textcolor{themeColor}{#1}}
+\newcommand\curColor[1]{\textcolor{\currentColor}{#1}}
+\newcommand\headColor[1]{\textcolor{\headersColor}{#1}}
+\newcommand\wiColor[1]{\textcolor{white}{#1}}
+
 % Settings
 \setbeamercolor*{title page header}{fg=white}
 \setbeamercolor*{author}{fg=white}
 \setbeamercolor*{date}{fg=white}
 
-\mode
-<all>
+% Pour les blocs
+\setbeamercolor{block title}{fg=white, bg=themeColor}
+\setbeamercolor{block body}{fg=black}
+\setbeamercolor{block title example}{fg=white, bg=vverforet}
+\setbeamercolor{block body example}{fg=black}
+\setbeamercolor{block title alerted}{fg=white, bg=bordeau}
+\setbeamercolor{block body alerted}{fg=black}
+\setbeamercolor{enumerate item}{fg=themeColor}
+\setbeamercolor{itemize item}{fg=themeColor}
+\setbeamercolor{alerted text}{fg=bordeau}
+\setbeamercolor{section in sidebar}{fg=themeColor!90}
+\setbeamercolor{subsection in sidebar}{fg=themeColor!40}
+
+
+\mode<all>
