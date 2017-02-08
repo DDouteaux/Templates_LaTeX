@@ -1,24 +1,97 @@
 \documentclass{beamer}
+
+\iffalse
+\usepackage[math]{kurier} % main font
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\title{There Is No Largest Prime Number}
-\date[ISPN ’80]{27th International Symposium of Prime Numbers}
-\author[Euclid]{Euclid of Alexandria \texttt{euclid@alexandria.edu}}
+\fi
+
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault]{FiraSans}
+\usepackage[nomap]{FiraMono}
+
+
+\title{Projet d'option informatique}
+\subtitle{Deep Learning, traitement de langues naturelles et text mining}
+\author{Damien \textsc{Douteaux} -- Vincent \textsc{Hocquemiller} -- Louis \textsc{Redonnet}}
 \date{Jeudi 16 février 2017}
 
 \usetheme{texsx}
 
 \begin{document}
 
-\section{Début}
 \begin{frame}[plain]
-\titlepage
+	\titlepage
 \end{frame}
 
-\section{Milieu}
+\section{Sommaire}
+
+\begin{frame}
+	\frametitle{Plan de la présentation}
+	\tableofcontents
+\end{frame}
+
+\section{Projets envisagés}
+
+\subsection{Analyse de liens}
+\begin{frame}
+	\frametitle{Présentation du sujet}
+	
+\end{frame}
+
+\subsection{Reconnaissance d'auteur}
+\begin{frame}
+	\frametitle{Présentation du sujet}
+	
+\end{frame}
+
+\subsection{Inférence}
+\begin{frame}
+	\frametitle{Présentation du sujet}
+
+\end{frame}
+
+\section{Choix du sujet}
+
+\begin{frame}
+	\frametitle{Comparaison des sujets}
+	\begin{table}[ht]
+		\centering
+		\begin{tabular}{cccc}
+			Sujet & Apports personnels & BDD & Complexité \\
+			Analyse de liens & ? & Stanford & ? \\
+			Reconnaissance d'auteur & Traitement du français & ? & Modérée \\
+			Inférence & Traitement du français & ? & Variable \\ 
+		\end{tabular}
+	\end{table}
+\end{frame}
+
+\section{Base de données}
+
+\begin{frame}
+	\frametitle{Prise de contact PAr}
+	\begin{itemize}
+		\item Récupération de BDD
+		\item Les contes
+		\item Wikipédia
+		\item ...
+	\end{itemize}
+\end{frame}
+
+
+\section{Gestion de projet}
+
+\begin{frame}
+	\frametitle{Une semaine de décallage}
+	\includegraphics[height=.9\textheight]{gantt}
+\end{frame}
+
+\section{Conclusion}
+
+\section{Références}
 
 \begin{frame} 
-	\frametitle{There Is No Largest Prime Number} 
+	\frametitle{There is no largest prime number} 
 	\framesubtitle{The proof uses \textit{reductio ad absurdum}.} 
 	
 	\begin{theorem}
@@ -41,11 +114,4 @@
 		\item two
 	\end{itemize}
 \end{frame}
-
-\section{Plan}
-\begin{frame}
-	\frametitle{Plan de la présentation}
-	\insertverticalnavigation{3cm}
-\end{frame}
-
 \end{document}

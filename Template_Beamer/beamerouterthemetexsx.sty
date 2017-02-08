@@ -3,11 +3,11 @@
 \newlength{\sidebarwidth}
 \setlength{\sidebarwidth}{2cm}
 
-\useoutertheme[width=0pt]{sidebar}%
+\useoutertheme[width=0cm]{sidebar}%
 \setbeamertemplate{sidebar left}{%
-	\begin{tikzpicture}
+	\begin{tikzpicture}[execute at begin node=\setlength{\baselineskip}{10pt}]
 		\fill [themeColor] (0,0) rectangle (\sidebarwidth,\the\paperwidth);
-		\node [anchor=north west] (salut) at (0,{\the\paperwidth-1.5cm}) {\insertverticalnavigation{\beamer@sidebarwidth}};
+		\node [anchor=north west] (salut) at (0,{\the\paperwidth-1.5cm}) {\hspace{-.05cm}\insertverticalnavigation{\beamer@sidebarwidth}};
 		\node [anchor=south west] at (0,3.25) {\hspace*{-.1cm}\includegraphics[width=2cm]{logopng}};
 	\end{tikzpicture}
 }
@@ -18,21 +18,20 @@
 	    \begin{tikzpicture}
 	      	\useasboundingbox[fill=white](0,0) rectangle(\the\paperwidth,1.4);
 	      	\fill[themeColor] (0,.5) rectangle (2,1.5);
+			\node [white, minimum width=2cm, right] at (-.05,1) {\fontsize{8pt}{0pt}\selectfont{\textbf{OPTION INFO}}};
 	        \fill[themeColor] (2,0) rectangle (\the\paperwidth,.5);
 		  	\ifx\insertframesubtitle\@empty%
 	       		{
-	       			\node[anchor=west, themeColor, minimum width={\the\paperwidth-2cm}] at (2,.9){\textsc{\MakeLowercase{\protect\insertframetitle}}};
+	       			\node[anchor=west, themeColor, minimum width={\the\paperwidth-2cm}] at (2,1){\textsc{\MakeLowercase{\protect\insertframetitle}}};
 	   			}
 	     	\else%
 		       	{
-		       		\node[anchor= west, themeColor, minimum width={\the\paperwidth-2cm}] at (2,.9){\textsc{\MakeLowercase{\protect\insertframetitle}}~~{\small\insertframesubtitle}};%
+		       		\node[anchor= west, themeColor, minimum width={\the\paperwidth-2cm}] at (2,1){\textsc{\MakeLowercase{\protect\insertframetitle}}~~{\small\insertframesubtitle}};%
 	          	}%
 	        \fi
 	  	\end{tikzpicture}
 	\end{beamercolorbox}
 }
-
-\setbeamersize{text margin left=2.5cm,text margin right=.5cm}
 
 \setbeamertemplate{footline}[text line]{%
 	\begin{beamercolorbox}[wd=\the\paperwidth, ht=2.5ex, dp=2ex, rightskip=.5cm]{white}
@@ -41,5 +40,7 @@
 }
 
 \setbeamertemplate{headline}{}
+
+\setbeamersize{text margin left=2.5cm,text margin right=.5cm}
 
 \mode<all>

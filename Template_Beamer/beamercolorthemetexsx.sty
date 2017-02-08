@@ -32,8 +32,24 @@
 \setbeamercolor{enumerate item}{fg=themeColor}
 \setbeamercolor{itemize item}{fg=themeColor}
 \setbeamercolor{alerted text}{fg=bordeau}
-\setbeamercolor{section in sidebar}{fg=themeColor!90}
-\setbeamercolor{subsection in sidebar}{fg=themeColor!40}
+\setbeamercolor{section in toc}{fg=themeColor}
+\setbeamercolor{section in sidebar}{fg=white}		        	 %color of the active section
+\setbeamercolor{section in sidebar shaded}{fg=themeColor!40}     %color of the inactive section
+\setbeamercolor{subsection in sidebar}{fg=white}    		     %color of the active subsection
+\setbeamercolor{subsection in sidebar shaded}{fg=themeColor!40}  %color of the inactive subsection
+\setbeamerfont{title}{shape=\scshape,series=\bfseries} 
+\setbeamerfont{section in sidebar}{size=\fontsize{8}{0}\selectfont, shape=\bfseries}
+\setbeamerfont{subsection in sidebar}{size=\fontsize{6}{0}\selectfont}
+\setbeamerfont{section in sidebar shaded}{size=\fontsize{8}{0}\selectfont, shape=\normalshape}
+\setbeamerfont{frametitle}{shape=\scshape,series=\bfseries}
 
+% Items styles
+\setbeamertemplate{itemize item}{\scriptsize\raise1.25pt\hbox{$\circledast$}}
+\setbeamertemplate{itemize subitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+\setbeamertemplate{itemize subsubitem}{\tiny\raise1.5pt\hbox{\donotcoloroutermaths$\blacktriangleright$}}
+\setbeamertemplate{enumerate item}{\insertenumlabel.}
+\setbeamertemplate{enumerate subitem}{\insertenumlabel.\insertsubenumlabel}
+\setbeamertemplate{enumerate subsubitem}{\insertenumlabel.\insertsubenumlabel.\insertsubsubenumlabel}
+\setbeamertemplate{enumerate mini template}{\insertenumlabel}
 
 \mode<all>
