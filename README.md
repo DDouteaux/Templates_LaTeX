@@ -1,17 +1,22 @@
-# Templates LaTeX
-Un ensemble de templates LaTeX, d'exemples de codes et de documentations pour LaTeX et en LaTeX. Tous les documents proposés ont été compilés avec TeX Live et le compilateur XeLaTeX.
+# LaTeX templates and documentations - v0.1
+This repository contains various samples of LaTeX codes and samples made for LaTeX and in LaTeX. All documents given here were compiled using TeXLive with XeLaTeX.
 
-## Template document
-Un premier template de documents. Différentes pages de gardes possibles et configurables ainsi que plusieurs types pour les sections. Toujours en cours de réalisation.
+## Article Template
+The main template on which I am currently working. More details will arrive "soon" (as soon as I can).
 
-## Template deux colonnes
-Une seconde version du template précédent, mais adapté à la création de documents ou les colonnes de notes et remarques ont une grande importance et sont présente dans la majorité du document.
+## LaTeX technical notes
+Code samples used in the different templates (or not) that may prove useful. Most of these examples come from tex.stackexchange.com and are translated in French.
 
-## Template beamer
-Un template pour faire des présentations en Beamer. Ce dernier dispose de certaines similarités avec le template Palo Alto, mais avec une moins grande prédominance des couleurs dans le style et des éléments disposés différement.
+## Old templates
+This folder contains the former templates realized before the clean up of this repository. Most of the work performed on these templates is now used in the current templates.
+### Document template
+An article style document templating that provides several title pages and an automatic configuration via a conf file. Not completed, but forked and reused for the actual "Article Template".
 
-## Fiches techniques LaTeX
-Des exemples de codes utilisés dans les différents documents proposés (ou non). La plupart des exemples sont issus de traduction de postes sur le forme tex.stackexchange.com et reprennent les informations qui me semblaient utiles à réutiliser plus tard.
+### Two columns template
+A second version of the document template, but this time adapted to create documents with a main column and a side columns for notes. This intents to highlight side notes and remarks if those one are numerous and important to understand the content of the document.
+
+### Beamer template
+A custom template to create Beamer presentation. This one is inspired by Palo Alto, though colors are less present and some styles and elements vary.
 
 ## Contact
-En cas de questions, n'hésitez pas à laisser des commentaire ou lever des problèmes sur ces éléments.
+If you have any question, feel free to comment the dirrect files, I'll do my best to answer as fast as possible.
