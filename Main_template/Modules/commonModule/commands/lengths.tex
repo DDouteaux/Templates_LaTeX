@@ -1,0 +1,46 @@
+%%---------------------------------------------------------------%%
+%                                                                 %
+%                     Define custom lengths                       %
+%                                                                 %
+%  Define lengths that will be used by the macro of this module   %
+%                                                                 %
+%%---------------------------------------------------------------%%
+
+%%
+%% Text height : height of letters
+%%
+\newlength{\lengthTextHeight}
+
+\makeatletter
+\newcommand{\updateLengthTextHeight}{
+	\setlength{\lengthTextHeight}{\f@size pt}
+}
+\makeatother
+
+\updateLengthTextHeight{}
+
+
+%%
+%% Item bullets height : height for bullets in itemize
+%%
+\newlength{\lengthBulletHeight}
+
+\newcommand{\updateLengthBulletHeight}[1]{
+	\updateLengthTextHeight{}
+	\setlength{\lengthBulletHeight}{#1}
+}
+
+\updateLengthBulletHeight{\lengthTextHeight}
+
+
+%%
+%% Item bullets baseline shift : shift from baseline for itemize bullets
+%%
+\newlength{\lengthBulletBaselineShift}
+
+\newcommand{\updateLengthBulletBaselineShift}[1]{
+	\updateLengthTextHeight{}
+	\setlength{\lengthBulletBaselineShift}{#1}
+}
+
+\updateLengthBulletHeight{\lengthTextHeight}

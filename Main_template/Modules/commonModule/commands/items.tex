@@ -1,0 +1,21 @@
+
+%%
+%% Custom itemize environment
+%%
+%% Params :
+%    1. Symbol to use. For possible keys see styles/symbols/symbols__item.
+%    2. Symbol color (if able). For possible keys see styles/colors/*.
+%    3. Base size for bullets. Value to store in lengthBulletHeight. If empty, no update is carried.
+%    4. Baseline shift of figure in percentage of lengthBulletHeight (100% <=> 1). 
+%
+% If you don't want to update a parameter, leave its value blank!
+\makeatletter
+\newenvironment{customitemize}[4]{%
+  	\updateLengthBulletHeight{#3}
+  	\renewcommand\labelitemi{#1}
+  	\renewcommand{\itemBulletsColor}{#2}
+	\begin{itemize}
+}{%
+	\end{itemize}
+}
+\makeatother

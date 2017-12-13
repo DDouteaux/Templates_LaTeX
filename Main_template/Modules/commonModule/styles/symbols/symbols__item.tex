@@ -1,0 +1,55 @@
+%%---------------------------------------------------------------%%
+%                                                                 %
+%                     Symbol for item bullets                     %
+%                                                                 %
+%      List of symbols that will be displayed as item bullets.    %
+%                                                                 %
+%%---------------------------------------------------------------%%
+
+%%
+%% Variable used
+%%
+
+% Theses symbols use the following variables :
+%    - 
+%
+%
+
+
+
+
+%%
+%% Bullets with predefined chars
+%%
+\newcommand{\itemFFemtoBullet}{$\vcenter{\hbox{\tiny$\cdot$}}$}
+\newcommand{\itemTinyBullet}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+%%
+%% Circle bullet
+%%
+\newcommand{\itemCircleGeneral}{\tikz[baseline={([yshift=-.5ex]current bounding box.center)}]{ \draw [\itemBulletsColor] (0,0) circle (\lengthBulletHeight); }}
+
+%%
+%% Disk bullet
+%%
+\newcommand{\itemDiskGeneral}{\tikz[baseline={([yshift=-.5ex]current bounding box.center)}]{ \fill [\itemBulletsColor] (0,0) circle (\lengthBulletHeight); }}
+
+%%
+%% Square bullet
+%%
+\newcommand{\itemSquareGeneral}{\tikz[baseline={([yshift=-.5ex]current bounding box.center)}]{ \draw [\itemBulletsColor] (0,0) rectangle (\lengthBulletHeight,\lengthBulletHeight); }}
+
+%%
+%% Full square bullet
+%%
+\newcommand{\itemSquareFullGeneral}{\tikz[baseline={([yshift=-.75ex]current bounding box.center)}]{ \fill [\itemBulletsColor] (0,0) rectangle (\lengthBulletHeight,\lengthBulletHeight); }}
+
+%%
+%% Diamond bullet
+%%
+\newcommand{\itemDiamondGeneral}{\tikz[baseline={([yshift=-.5ex]current bounding box.center)}]{ \fill [\itemBulletsColor] (0,.5\lengthBulletHeight) -- (.5\lengthBulletHeight,\lengthBulletHeight) -- (\lengthBulletHeight,.5\lengthBulletHeight) -- (.5\lengthBulletHeight,0) --cycle; }}
+
+%%
+%% Target bullet
+%%
+\newcommand{\itemTargetGeneral}{\tikz[baseline={([yshift=-.75\lengthBulletHeight]current bounding box.center)}]{ \fill [\itemBulletsColor] (0,0) circle (\lengthBulletHeight); \fill [white] (0,0) circle (.7\lengthBulletHeight); \fill [\itemBulletsColor] (0,0) circle (.3\lengthBulletHeight); }}

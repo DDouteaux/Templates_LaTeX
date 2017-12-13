@@ -1,0 +1,20 @@
+%%---------------------------------------------------------------%%
+%                                                                 %
+%                    Code configuration - Ruby                    %
+%         Language definition of Ruby for lstlisting code         %
+%                                                                 %
+%%---------------------------------------------------------------%%
+
+\lstdefinelanguage{minizinc}
+{
+  % list of keywords
+  morekeywords={ann,annotation,any,assert,bool,constraint,enum,float,function,in,include,int,list,of,op,output,minimize,maximize,par,predicate,record,set,solve,string,test,tuple,type,var,where},%
+  emph={abort,abs,acos,acosh,array_intersect,array_union,array1d,array2d,array3d,array4d,array5d,array6d,asin,asinh,assert,atan,atanh,bool2int,card,ceil,concat,cos,cosh,dom,dom_array,dom_size,fix,exp,floor,index_set,index_set_1of2,index_set_2of2,index_set_1of3,index_set_2of3,index_set_3of3,int2float,is_fixed,join,lb,lb_array,length,ln,log,log2,log10,min,max,pow,product,round,set2array,show_int,show_float,sin,sinh,sqrt,sum,tan,tanh,trace,ub,ub_array},%
+  emph={<->,->,<-,\\/,xor,/\,<,>,<=,>=,==,=,!=,in,subset,superset,union,diff,symdiff,..,intersect,++,+,-,*,/,div,mod},%
+  emphstyle={\color{themeColor}\bfseries}   % style and color for the first class of emph words (here words)
+  emphstyle={\color{bluenight}\bfseries}    % style and color for the second class of emph sword (here operators)
+  sensitive=false,                          % keywords are not case-sensitive
+  morecomment=[l]{\%},                      % l is for line comment
+  morecomment=[s]{/*}{*/},                  % s is for start and end delimiter
+  morestring=[b]"                           % defines that strings are enclosed in double quotes
+}
