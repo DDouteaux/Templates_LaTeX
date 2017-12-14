@@ -6,50 +6,54 @@
 %                                                                 %
 %%---------------------------------------------------------------%%
 
+%% ================================================================
 %%
 %% Variable used
 %%
+%% ================================================================
 
 % Theses symbols use the following variables :
-%    - 
-%
-%
+%    - lengthBulletHeight : expected height for the bullets
+%    - lengthBulletBaselineShift : baseline shift for the bullets
+%    - itemBulletsColor : main color for the bullets
+%    - itemBulletsSideColor : side color for bicolored bullets
 
 
 
-
+%% ================================================================
 %%
 %% Bullets with predefined chars
 %%
-\newcommand{\itemFFemtoBullet}{$\vcenter{\hbox{\tiny$\cdot$}}$}
-\newcommand{\itemTinyBullet}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+%% ================================================================
 
-%%
-%% Circle bullet
-%%
-\newcommand{\itemCircleGeneral}{\tikz[baseline={([yshift=-.5ex]current bounding box.center)}]{ \draw [\itemBulletsColor] (0,0) circle (\lengthBulletHeight); }}
+\newcommand{\itemFFemtoBullet}{$\vcenter{\hbox{\tiny\textcolor{\itemBulletsColor}{$\cdot$}}}$}
+\newcommand{\itemTinyBullet}{$\vcenter{\hbox{\tiny\textcolor{\itemBulletsColor}{$\bullet$}}}$}
 
-%%
-%% Disk bullet
-%%
-\newcommand{\itemDiskGeneral}{\tikz[baseline={([yshift=-.5ex]current bounding box.center)}]{ \fill [\itemBulletsColor] (0,0) circle (\lengthBulletHeight); }}
 
-%%
-%% Square bullet
-%%
-\newcommand{\itemSquareGeneral}{\tikz[baseline={([yshift=-.5ex]current bounding box.center)}]{ \draw [\itemBulletsColor] (0,0) rectangle (\lengthBulletHeight,\lengthBulletHeight); }}
 
+%% ================================================================
 %%
-%% Full square bullet
+%% Tikz drawn symbols monocolored
 %%
-\newcommand{\itemSquareFullGeneral}{\tikz[baseline={([yshift=-.75ex]current bounding box.center)}]{ \fill [\itemBulletsColor] (0,0) rectangle (\lengthBulletHeight,\lengthBulletHeight); }}
+%% ================================================================
 
-%%
-%% Diamond bullet
-%%
-\newcommand{\itemDiamondGeneral}{\tikz[baseline={([yshift=-.5ex]current bounding box.center)}]{ \fill [\itemBulletsColor] (0,.5\lengthBulletHeight) -- (.5\lengthBulletHeight,\lengthBulletHeight) -- (\lengthBulletHeight,.5\lengthBulletHeight) -- (.5\lengthBulletHeight,0) --cycle; }}
+\newcommand{\itemCircleGeneral}{\symbolCircleGeneral{white}{\itemBulletsColor}{\lengthBulletHeight}{\lengthBulletBaselineShift}}
+\newcommand{\itemDiskGeneral}{\symbolCircleGeneral{\itemBulletsColor}{\itemBulletsColor}{\lengthBulletHeight}{\lengthBulletBaselineShift}}
+\newcommand{\itemSquareGeneral}{\symbolSquareGeneral{white}{\itemBulletsColor}{\lengthBulletHeight}{\lengthBulletBaselineShift}}
+\newcommand{\itemSquareFillGeneral}{\symbolSquareGeneral{\itemBulletsColor}{\itemBulletsColor}{\lengthBulletHeight}{\lengthBulletBaselineShift}}
+\newcommand{\itemDiamondGeneral}{\symbolDiamondGeneral{white}{\itemBulletsColor}{\lengthBulletHeight}{\lengthBulletBaselineShift}}
+\newcommand{\itemDiamondFillGeneral}{\symbolDiamondGeneral{\itemBulletsColor}{\itemBulletsColor}{\lengthBulletHeight}{\lengthBulletBaselineShift}}
+\newcommand{\itemTargetGeneral}{\symbolTargetGeneral{\itemBulletsColor}{\itemBulletsColor}{\lengthBulletHeight}{\lengthBulletBaselineShift}}
 
+
+
+%% ================================================================
 %%
-%% Target bullet
+%% Tikz drawn symbols bicolored
 %%
-\newcommand{\itemTargetGeneral}{\tikz[baseline={([yshift=-.75\lengthBulletHeight]current bounding box.center)}]{ \fill [\itemBulletsColor] (0,0) circle (\lengthBulletHeight); \fill [white] (0,0) circle (.7\lengthBulletHeight); \fill [\itemBulletsColor] (0,0) circle (.3\lengthBulletHeight); }}
+%% ================================================================
+
+\newcommand{\itemCircleBiGeneral}{\symbolCircleGeneral{\itemBulletsSideColor}{\itemBulletsColor}{\lengthBulletHeight}{\lengthBulletBaselineShift}}
+\newcommand{\itemSquareBiGeneral}{\symbolSquareGeneral{\itemBulletsSideColor}{\itemBulletsColor}{\lengthBulletHeight}{\lengthBulletBaselineShift}}
+\newcommand{\itemDiamondBiGeneral}{\symbolDiamondGeneral{\itemBulletsSideColor}{\itemBulletsColor}{\lengthBulletHeight}{\lengthBulletBaselineShift}}
+\newcommand{\itemTargetBiGeneral}{\symbolTargetGeneral{\itemBulletsSideColor}{\itemBulletsColor}{\lengthBulletHeight}{\lengthBulletBaselineShift}}

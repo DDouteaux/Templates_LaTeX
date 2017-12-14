@@ -1,21 +1,80 @@
 
+%% ================================================================
 %%
-%% Custom itemize environment
+%% Custom bicolored itemize environment
 %%
-%% Params :
+%% ================================================================
+
+% Params :
+%    1. Symbol to use. For possible keys see styles/symbols/symbols__item.
+%    2. Main symbol color (if able). For possible keys see styles/colors/*.
+%    3. Second symbol color (if able). For possible keys see styles/colors/*.
+%    4. Base size for bullets. Value to store in lengthBulletHeight. If empty, no update is carried.
+%    5. Baseline shift of figure in percentage of lengthBulletHeight (100% <=> 1). 
+%
+% If you don't want to update a parameter, leave its value blank!
+\makeatletter
+\newenvironment{biColorItemize}[5]{%
+	\ifstrempty{#4}{}{\updateLengthBulletHeight{#4}}
+	\ifstrempty{#2}{}{\renewcommand{\itemBulletsColor}{#2}}
+  	\ifstrempty{#3}{}{\renewcommand{\itemBulletsSideColor}{#3}}
+  	\ifstrempty{#5}{}{\updateLengthBulletBaselineShift{#5}}
+  	\ifstrempty{#1}{}{\renewcommand\labelitemi{#1}}  	
+	\begin{itemize}
+}{%
+	\end{itemize}
+}
+\makeatother
+
+
+%% ================================================================
+%%
+%% Custom monocolored itemize environment
+%%
+%% ================================================================
+
+% Params :
 %    1. Symbol to use. For possible keys see styles/symbols/symbols__item.
 %    2. Symbol color (if able). For possible keys see styles/colors/*.
 %    3. Base size for bullets. Value to store in lengthBulletHeight. If empty, no update is carried.
 %    4. Baseline shift of figure in percentage of lengthBulletHeight (100% <=> 1). 
 %
+% This macro is based on the initial biColorItemize.
 % If you don't want to update a parameter, leave its value blank!
 \makeatletter
-\newenvironment{customitemize}[4]{%
-  	\updateLengthBulletHeight{#3}
-  	\renewcommand\labelitemi{#1}
-  	\renewcommand{\itemBulletsColor}{#2}
-	\begin{itemize}
+\newenvironment{customItemize}[4]{%
+	\begin{biColorItemize}{#1}{#2}{white}{#3}{#4}
 }{%
-	\end{itemize}
+	\end{biColorItemize}
+}
+\makeatother
+
+% Params :
+%    1. Symbol to use. For possible keys see styles/symbols/symbols__item.
+%    2. Base size for bullets. Value to store in lengthBulletHeight. If empty, no update is carried.
+%    3. Baseline shift of figure in percentage of lengthBulletHeight (100% <=> 1). 
+%
+% This macro is based on the initial biColorItemize.
+% If you don't want to update a parameter, leave its value blank!
+\makeatletter
+\newenvironment{customThItemize}[3]{%
+	\begin{customItemize}{#1}{themeColor}{#2}{#3}
+}{%
+	\end{customItemize}
+}
+\makeatother
+
+% Params :
+%    1. Symbol to use. For possible keys see styles/symbols/symbols__item.
+%    2. Base size for bullets. Value to store in lengthBulletHeight. If empty, no update is carried.
+%    3. Baseline shift of figure in percentage of lengthBulletHeight (100% <=> 1). 
+%
+% This macro is based on the initial biColorItemize.
+% If you don't want to update a parameter, leave its value blank!
+\makeatletter
+\newenvironment{customBlackItemize}[3]{%
+	\begin{customItemize}{#1}{black}{#2}{#3}
+}{%
+	\end{customItemize}
 }
 \makeatother
