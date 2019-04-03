@@ -1,0 +1,39 @@
+%%---------------------------------------------------------------------------%%
+%                                                                             %
+%               APPLY SECTION FORMATS FROM VALUES IN CONFIGURATION            %
+%                                Module : Common                              %
+%                                                                             %
+%%---------------------------------------------------------------------------%%
+
+% Apply a section format by its name as given in the configuration
+% of this common module.
+% 
+% Parameters :
+% - Name of the style
+% - Section number
+% - Section label
+\makeatletter
+\newcommand{\applySectionFormat}[3]{%
+  \ifnum\pdf@strcmp{#1}{default}=0%
+  \sectionBasic{#2}{#3}%
+  \else\ifnum\pdf@strcmp{#1}{numberInSquare}=0%
+  \sectionNumberInSquare{#2}{#3}%
+  \else\ifnum\pdf@strcmp{#1}{greatNumber}=0%
+  \sectionGreatNumber{#2}{#3}%
+  \else\ifnum\pdf@strcmp{#1}{numberInMargin}=0%
+  \sectionNumberInMargin{#2}{#3}%
+  \else\ifnum\pdf@strcmp{#1}{bigFigureAndRule}=0%
+  \sectionBigFigureAndRule{#2}{#3}%
+  \else\ifnum\pdf@strcmp{#1}{bigFigureAndVerticalRule}=0%
+  \sectionBigFigureAndVerticalRule{#2}{#3}%
+  \else\ifnum\pdf@strcmp{#1}{bigFigureAndBackground}=0%
+  \sectionBigFigureColoredBackground{#2}{#3}%
+  \else\ifnum\pdf@strcmp{#1}{backgroundImage}=0%
+  \sectionBackgroundImage{#2}{#3}%
+  \else\ifnum\pdf@strcmp{#1}{backgroundImageTransparencyWithTOC}=0%
+  \sectionBackgroundImageTransparency{#2}{#3}%
+  \else\ifnum\pdf@strcmp{#1}{backgroundImageTransparencyNoTOC}=0%
+  \sectionBackgroundImageTransparencyWithoutToc{#2}{#3}%
+  \fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
+}
+\makeatother

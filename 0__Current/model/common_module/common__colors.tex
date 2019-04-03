@@ -1,0 +1,189 @@
+%%-------------------------------------------------------------------%%
+%                                                                     %
+%             PREDEFINED COLORS AND COLOR RELATED COMMANDS            %
+%                                                                     %
+%%-------------------------------------------------------------------%%
+
+
+%%==================================================================
+%% FIRST PART : PREDEFINED COLORS
+%%==================================================================
+
+%%
+%% Various colors
+%%
+\definecolor{vertforet}{RGB}{0,153,51}
+\definecolor{bordeau}{RGB}{199,16,26}
+\definecolor{gris}{RGB}{195,195,195}
+\definecolor{bluenight}{RGB}{0,82,148}
+\definecolor{violet}{RGB}{112,4,98}
+\definecolor{amber}{RGB}{255,110,0}
+
+
+%%
+%% Tints of green
+%%
+\definecolor{green1}{RGB}{0,100,0}    % vert forêt 
+\definecolor{green3}{RGB}{85,107,47}
+\definecolor{green4}{RGB}{0,128,0}
+
+
+%%
+%% Tints of red
+%%
+\definecolor{red1}{hsb}{1,1,1}      % bordeau
+\definecolor{red2}{hsb}{1,.9,1}
+\definecolor{red3}{hsb}{1,.8,1}
+\definecolor{red4}{hsb}{1,.7,1}
+\definecolor{red5}{hsb}{1,.6,1}
+\definecolor{red6}{hsb}{1,.5,1}
+\definecolor{red7}{hsb}{1,.4,1}
+\definecolor{red8}{hsb}{1,.3,1}
+\definecolor{red9}{hsb}{1,.2,1}
+\definecolor{red10}{hsb}{1,.1,1}
+\definecolor{red11}{hsb}{1,0,1}
+
+
+%%
+%% Tints of blue
+%%
+\definecolor{blue1}{hsb}{0.594,1,1}
+\definecolor{blue2}{hsb}{0.594,.9,1}
+\definecolor{blue3}{hsb}{0.594,.8,1}
+\definecolor{blue4}{hsb}{0.594,.7,1}
+\definecolor{blue5}{hsb}{0.594,.6,1}
+\definecolor{blue6}{hsb}{0.594,.5,1}
+\definecolor{blue7}{hsb}{0.594,.4,1}
+\definecolor{blue8}{hsb}{0.594,.3,1}
+\definecolor{blue9}{hsb}{0.594,.2,1}
+\definecolor{blue10}{hsb}{0.594,.1,1}
+\definecolor{blue11}{hsb}{0.594,0,1}
+
+
+%%
+%% Tints of violet
+%%
+\definecolor{violet1}{hsb}{.75,1,1}    % violet
+\definecolor{violet2}{hsb}{.75,.9,1}
+\definecolor{violet3}{hsb}{.75,.8,1}
+\definecolor{violet4}{hsb}{.75,.7,1}
+\definecolor{violet5}{hsb}{.75,.6,1}
+\definecolor{violet6}{hsb}{.75,.5,1}
+\definecolor{violet7}{hsb}{.75,.4,1}
+\definecolor{violet8}{hsb}{.75,.3,1}
+\definecolor{violet9}{hsb}{.75,.2,1}
+\definecolor{violet10}{hsb}{.75,.1,1}
+\definecolor{violet11}{hsb}{.75,0,1}
+
+
+%%
+%% Tints of orange
+%%
+\definecolor{orange1}{hsb}{.1,1,1}   % ambre
+\definecolor{orange2}{hsb}{.1,.9,1}
+\definecolor{orange3}{hsb}{.1,.8,1}
+\definecolor{orange4}{hsb}{.1,.7,1}
+\definecolor{orange5}{hsb}{.1,.6,1}
+\definecolor{orange6}{hsb}{.1,.5,1}
+\definecolor{orange7}{hsb}{.1,.4,1}
+\definecolor{orange8}{hsb}{.1,.3,1}
+\definecolor{orange9}{hsb}{.1,.2,1}
+\definecolor{orange10}{hsb}{.1,.1,1}
+\definecolor{orange11}{hsb}{.1,0,1}
+
+
+%%
+%% Tints of pink
+%%
+\definecolor{pink1}{hsb}{.917,1,1}     % rose
+\definecolor{pink2}{hsb}{.917,.9,1}
+\definecolor{pink3}{hsb}{.917,.8,1}
+\definecolor{pink4}{hsb}{.917,.7,1}
+\definecolor{pink5}{hsb}{.917,.6,1}
+\definecolor{pink6}{hsb}{.917,.5,1}
+\definecolor{pink7}{hsb}{.917,.4,1}
+\definecolor{pink8}{hsb}{.917,.3,1}
+\definecolor{pink9}{hsb}{.917,.2,1}
+\definecolor{pink10}{hsb}{.917,.1,1}
+\definecolor{pink11}{hsb}{.917,0,1}
+
+
+%%
+%% Tints of yellow
+%%
+\definecolor{yellow1}{hsb}{.14,1,1}   % jaune
+\definecolor{yellow2}{hsb}{.14,.9,1}
+\definecolor{yellow3}{hsb}{.14,.8,1}
+\definecolor{yellow4}{hsb}{.14,.7,1}
+\definecolor{yellow5}{hsb}{.14,.6,1}
+\definecolor{yellow6}{hsb}{.14,.5,1}
+\definecolor{yellow7}{hsb}{.14,.4,1}
+\definecolor{yellow8}{hsb}{.14,.3,1}
+\definecolor{yellow9}{hsb}{.14,.2,1}
+\definecolor{yellow10}{hsb}{.14,.1,1}
+\definecolor{yellow11}{hsb}{.14,0,1}
+
+%%
+%% Tints of brown
+%%
+\definecolor{brown1}{RGB}{210,105,30}    % brown
+
+
+%%
+%% Tints of gray
+%%
+\definecolor{gray1}{hsb}{0,0,0}
+\definecolor{gray2}{hsb}{0,0,.1}
+\definecolor{gray3}{hsb}{0,0,.2}
+\definecolor{gray4}{hsb}{0,0,.3}
+\definecolor{gray5}{hsb}{0,0,.4}
+\definecolor{gray6}{hsb}{0,0,.5}
+\definecolor{gray7}{hsb}{0,0,.6}
+\definecolor{gray8}{hsb}{0,0,.7}
+\definecolor{gray9}{hsb}{0,0,.8}
+\definecolor{gray10}{hsb}{0,0,.9}
+\definecolor{gray11}{hsb}{0,0,1}
+
+
+
+
+%%==================================================================
+%% SECOND PART : COMMANDS TO AUTOMATICALLY PLACE COLORS
+%%==================================================================
+
+\newcommand\bColor[1]{\textcolor{bluenight}{#1}}
+\newcommand\vColor[1]{\textcolor{vertforet}{#1}}
+\newcommand\viColor[1]{\textcolor{violet}{#1}}
+\newcommand\aColor[1]{\textcolor{amber}{#1}}
+\newcommand\gColor[1]{\textcolor{gray}{#1}}
+\newcommand\rColor[1]{\textcolor{bordeau}{#1}}
+\newcommand\oColor[1]{\textcolor{orange}{#1}}
+\newcommand\wiColor[1]{\textcolor{white}{#1}}
+\newcommand\wColor[1]{\textcolor{white}{#1}}
+
+
+
+
+%%==================================================================
+%% THIRD PART : GLOBAL COLORS
+%%==================================================================
+
+% Apply user colors
+%
+% Parameters :
+% - Text to display in given color
+\newcommand\curColor[1]{\textcolor{\currentColor}{#1}}
+\newcommand\headColor[1]{\textcolor{\headersColor}{#1}}
+\newcommand\thColor[1]{\textcolor{themeColor}{#1}}
+
+
+
+%%==================================================================
+%% FOURTH PART : MISCELLANEOUS
+%%==================================================================
+
+% Draw a small square to display a sample of a given color.
+%
+% Parameters :
+% - The color to display
+\newcommand{\testColors}[1]{\tikz{ \draw [color=black, fill=#1] (0,0) rectangle (10pt, 10pt); } #1\newline}

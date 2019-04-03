@@ -1,0 +1,8 @@
+%% Defining our itemize bullet
+\newcommand\squareBullet{\textcolor{\currentColor}{\raisebox{.15em}{\tiny$\blacksquare$}}}
+%\newcommand\squareBullet{\textcolor{\currentColor}{\raisebox{.15em}{\tiny$\blacksquare$}}}
+
+\newcommand\itemperso[1]{\item[\squareBullet]~\textit{\textcolor{\currentColor}{#1}}\ifthenelse{\equal{#1}{}}{}{\quad\enskip}}
+\newcommand\subitemperso[1]{\item[\squareBullet]~\textit{\textcolor{\currentColor}{#1}}\ifthenelse{\equal{#1}{}}{}{\quad\enskip}}
+
+%\newcommand{\tabitem}{~~\llap{\mybullet}~~}

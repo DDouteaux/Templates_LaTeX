@@ -1,0 +1,42 @@
+%%---------------------------------------------------------------%%
+%                                                                 %
+%                      HANDLING OF HEADERS                        %
+%                        Module : Common                          %
+%                                                                 %
+%%---------------------------------------------------------------%%
+
+
+% Apply fancy headers and footers
+% And clear previously defined headers and footers
+% First part, for global pages
+	\pagestyle{fancy}
+	\renewcommand{\sectionmark}[1]{\markright{#1}}
+	\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+	\fancyhead{}
+	\fancyfoot{}
+
+	% Set footer
+	\fancyfoot[C]{\thepage}
+
+	% Set header
+	\fancyhead[L]{\leftmark~\raisebox{.15em}{\tiny$\blacksquare$}~\rightmark}
+	\fancyhead[R]{\Parttitle}
+
+	% Set rule width for headers and footers
+	\renewcommand{\headrulewidth}{0pt}% Default \headrulewidth is 0.4pt
+	\renewcommand{\footrulewidth}{0pt}% Default \footrulewidth is 0pt
+
+	
+% Second par, for plain page such as chapter, TOC...
+\fancypagestyle{plain}{%
+	\pagestyle{fancy}
+	\fancyhead{}
+	\fancyfoot{}
+
+	% Set footer
+	\fancyfoot[C]{\thepage}
+
+	% Set rule width for headers and footers
+	\renewcommand{\headrulewidth}{0pt}% Default \headrulewidth is 0.4pt
+	\renewcommand{\footrulewidth}{0pt}% Default \footrulewidth is 0pt
+}

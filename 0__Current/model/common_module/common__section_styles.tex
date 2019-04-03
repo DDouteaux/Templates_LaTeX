@@ -1,0 +1,206 @@
+%%-------------------------------------------------------------------%%
+%                                                                     %
+%           STYLE COLLECTIONS FOR SECTION, CHAPTER...NAMES            %
+%                                                                     %
+%%-------------------------------------------------------------------%%
+
+
+% Basic style to fully customize section name, figure and separator.
+% No other fioriture than given configuration will be used.
+%
+% Parameters :
+%	- Chapter number
+%	- Chapter name
+%
+% Name for configuration : basic
+\newcommand\sectionBasic[2]{\textbf{#1}~~\textbf{#2}}
+
+
+% Style with big figure and section name pushed to the right.
+%
+% Parameters :
+%	- Chapter number
+%	- Chapter name
+%
+% Name for configuration : numberInSquare
+\newcommand\sectionNumberInSquare[2]{%
+	\hspace*{\sectionLeftSpace}\textcolor{\sectionNumberColor}{\fbox{\textbf{#1}}}~~\textcolor{\sectionNameColor}{\textbf{#2}}
+}
+
+
+% Chapter style with big figure and section name after.
+% The whole is underlined by a thin line.
+%
+% Parameters :
+%	- Chapter number
+%	- Chapter name
+%
+% Name for configuration : greatNumber
+\newcommand\sectionGreatNumber[2]{%
+  \noindent%
+  \fontsize{30}{1}\selectfont%
+  \textit{\Huge{%
+    \textbf{#1.~~}%
+  }}
+  \fontsize{15}{1}\selectfont%
+  \textit{\textbf{#2}}\par%
+}
+
+
+% Chapter style with big figure and chapter name pushed to the right.
+% The whole is underlined by a thin line.
+%
+% Parameters :
+%	- Chapter number
+%	- Chapter name
+%
+% Name for configuration : numberInMargin
+\newcommand\sectionNumberInMargin[2]{
+	\begin{changemargin}{-1cm}{0cm}\textbf{#1}~~\textbf{#2}\end{changemargin}
+	\vspace*{-.25cm}
+}
+
+
+% Chapter style with big figure and chapter name pushed to the right.
+% The whole is underlined by a thin line.
+%
+% Parameters :
+%	- Chapter number
+%	- Chapter name
+%
+% Name for configuration : bigFigureAndRule
+\newcommand\sectionBigFigureAndRule[2]{
+	\begin{flushright}
+		\textbf{\fontsize{70}{60}\selectfont #1}
+		\vspace*{1cm}
+
+		\textbf{\fontsize{30}{40}\selectfont #2}
+
+		\rule{13cm}{1pt}
+	\end{flushright}
+	\vspace*{1.5cm}
+}
+
+
+% Chapter style with big figure and chapter name pushed to the right.
+% Both are separated with a vertical line.
+%
+% TODO: Finish this style
+%
+% Parameters :
+%	- Chapter number
+%	- Chapter name
+%
+% Name for configuration : bigFigureAndVerticalRule
+\newcommand\sectionBigFigureAndVerticalRule[2]{
+	\begin{flushright}
+		\textbf{\fontsize{70}{60}\selectfont #1}~~~~\rule[-1cm]{3pt}{3cm}~~~~\textbf{\fontsize{30}{40}\selectfont #2}
+
+		\rule{13cm}{1pt}
+	\end{flushright}
+}
+
+
+% Similar to chapterBigFigureAndVerticalRule but with a uniform currentColor background.
+% Moreover, chapter number and names are alignes on the right.
+%
+% TODO: Finish this style
+%
+% Parameters :
+%	- Chapter number
+%	- Chapter name
+%
+% Name for configuration : bigFigureAndBackground
+\newcommand\sectionBigFigureColoredBackground[2]{
+	\begin{changemargin}{-1.5cm}{-1.5cm}
+		\noindent\textcolor{-red!75!green!50}{\rule{\paperwidth}{8cm}}\hspace*{-3cm}\textcolor{white}{\rule{1.5pt}{7cm}}\newline
+	\end{changemargin}
+}
+
+
+% Chapter style with background made with an image. The chapter number and name
+% are located centered beneath the image, inside a cartridge.
+%
+% Parameters :
+%	- Chapter number
+%	- Chapter name
+%
+% Name for configuration : backgroundImage
+\newcommand\sectionBackgroundImage[2]{
+	\vspace*{-2.8cm}%
+	\begin{changemargin}{-1.5cm}{-1.5cm}
+		\noindent\begin{tikzpicture}%
+		  \pgfdeclarelayer{background}%
+		  \pgfdeclarelayer{foreground}%
+		  \pgfsetlayers{background,foreground}%
+		  \begin{pgfonlayer}{foreground}%
+			\node (separator) [color=blue, fill=blue, draw, rectangle, minimum width=21cm, inner sep=1pt] at (-10.5,0) {};%
+			\node (section_name) [fill=white, font=\fontsize{25}{1}\selectfont, inner sep=.3cm, text depth=.35ex] at (separator.center) {\textcolor{blue}{#1~~\raisebox{2pt}{$\bullet$}}~~\textbf{#2}\hspace*{.2cm}};%
+			\fill [white] ([xshift=-2pt]section_name.north east) -- (section_name.north east) -- ([xshift=.5cm]section_name.east) -- (section_name.south east) --([xshift=-2pt]section_name.south east) -- cycle ;%
+			\fill [white] ([xshift=2pt]section_name.north west) -- (section_name.north west) -- ([xshift=-.5cm]section_name.west) -- (section_name.south west)  --([xshift=2pt]section_name.south west) -- cycle ;%
+			\draw [color=blue, line width=2pt] (section_name.north east) -- ([xshift=.5cm]section_name.east) -- (section_name.south east) -- (section_name.south west) -- ([xshift=-.5cm]section_name.west) -- (section_name.north west) -- cycle;%
+		  \end{pgfonlayer}%
+		  \begin{pgfonlayer}{background}%
+			\path [fill tile image*={width=\paperwidth}{images/default4.JPG}] (-21,10) rectangle (0,0);%
+		  \end{pgfonlayer}%
+		\end{tikzpicture}%
+	\end{changemargin}
+}
+
+
+% Chapter style with background made with an image. The chapter number and name
+% are located top left in a transparent full text width line. It also auto include
+% a partial TOC in a cartridge in the right.
+%
+% Parameters :
+%	- Chapter number
+%	- Chapter name
+%
+% Name for configuration : backgroundImageTransparencyWithTOC
+\newcommand\sectionBackgroundImageTransparency[2]{
+	\vspace*{-2.8cm}%
+	\begin{changemargin}{-1.5cm}{-1.5cm}
+		\noindent\begin{tikzpicture}%
+		  \pgfdeclarelayer{background}%
+		  \pgfdeclarelayer{foreground}%
+		  \pgfsetlayers{background,foreground}%
+		  \begin{pgfonlayer}{foreground}%
+			\node (separator) [color=white, fill=blue, opacity=0, draw, rectangle, minimum width=21cm, inner sep=1pt] at (-10.5,0) {};%
+			\node (section_name) [fill=white, opacity=.55, text opacity=1, text width=\paperwidth, anchor=west, font=\fontsize{25}{1}\selectfont, inner sep=.4cm, text depth=.35ex] at (-21,8.25) {\thColor{\textbf{#1. #2}}};%
+			\node (section_toc)  [rounded corners, fill=white, draw=blue, fill opacity=.55, text opacity=1, minimum height=7cm, text width=.55\paperwidth, anchor=north west, inner sep=.2cm] at (-12.25,6.25) {\normalsize\begin{minipage}{\linewidth}\startcontents\printcontents{l}{1}{\setcounter{tocdepth}{1}}\end{minipage}};%
+		  \end{pgfonlayer}%
+		  \begin{pgfonlayer}{background}%
+			\path [fill tile image*={width=\paperwidth}{images/default4.JPG}] (-21,10) rectangle (0,0);%
+		  \end{pgfonlayer}%
+		\end{tikzpicture}%
+	\end{changemargin}
+	\vskip .5cm
+}
+
+
+% Chapter style with background made with an image. The chapter number and name
+% are located top left in a transparent full text width line. Partial TOC is not
+% auto-included with this shapre
+%
+% Parameters :
+%	- Chapter number
+%	- Chapter name
+%
+% Name for configuration : backgroundImageTransparencyNoTOC
+\newcommand\sectionBackgroundImageTransparencyWithoutToc[2]{
+	\vspace*{-2.8cm}%
+	\begin{changemargin}{-1.5cm}{-1.5cm}
+		\noindent\begin{tikzpicture}%
+		  \pgfdeclarelayer{background}%
+		  \pgfdeclarelayer{foreground}%
+		  \pgfsetlayers{background,foreground}%
+		  \begin{pgfonlayer}{foreground}%
+			\node (separator) [color=white, fill=blue, opacity=0, draw, rectangle, minimum width=21cm, inner sep=1pt] at (-10.5,0) {};%
+			\node (section_name) [fill=white, opacity=.55, text opacity=1, text width=\paperwidth, anchor=west, font=\fontsize{25}{1}\selectfont, inner sep=.4cm, text depth=.35ex] at (-21,8.25) {\thColor{\textbf{#1. #2}}};%
+		  \end{pgfonlayer}%
+		  \begin{pgfonlayer}{background}%
+			\path [fill tile image*={width=\paperwidth}{images/default4.JPG}] (-21,10) rectangle (0,0);%
+		  \end{pgfonlayer}%
+		\end{tikzpicture}%
+	\end{changemargin}
+}

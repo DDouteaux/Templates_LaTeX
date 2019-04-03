@@ -1,0 +1,55 @@
+%%-------------------------------------------------------------------%%
+%                                                                     %
+%                          STYLE FOR FIGURES                          %
+%                                                                     %
+%%-------------------------------------------------------------------%%
+
+
+% Figure caption style
+\DeclareCaptionLabelSeparator{bullet}{~\headColor{$\bullet$}~}
+\captionsetup{labelfont={bf,color=\headersColor},labelsep=bullet}
+
+
+% Compact way of adding figures in text. Do not use this with tikz (TeX) figures.
+%
+% Parameters:
+%	- size parameters
+%	- figure location
+%	- caption
+%	- label
+\newcommand{\figurePerso}[4]{\begin{figure}[!ht]\centering\includegraphics[#1]{#2}\caption{#3}\label{#4}\end{figure}}
+
+
+% Compact way of adding TikZ figure and span over full document width.
+%
+% Parameters:
+%	- figure location
+%	- caption
+%	- label
+\newcommand{\figurePersoTikz}[3]{\begin{figure}[h]\makebox[\textwidth][c]{\input{#1}}\caption{#2}\label{#3}\end{figure}}
+
+
+% Compact way of adding TikZ figure and center it along page width
+%
+% Parameters:
+%	- figure location
+%	- caption
+%	- label
+\newcommand{\figurePersoTikzz}[3]{\begingroup\centering\input{#1}\captionof{figure}{#2}\label{#3}\endgroup}
+
+
+% Compact way of adding TikZ figure without caption and centering it
+%
+% Parameters:
+%	- figure location
+\newcommand{\figurePersoTikzSansCaption}[1]{\begingroup\centering\input{#1}\endgroup}
+
+
+% Include image for lstlisting and centering vertically on line.
+%
+% Parameters:
+%	- figure location
+%	- height of image
+\newcommand{\vCenterLstlisting}[2]{\begingroup
+\setbox0=\hbox{\includegraphics[height=#2]{#1}}%
+\parbox{\wd0}{\box0}\endgroup}

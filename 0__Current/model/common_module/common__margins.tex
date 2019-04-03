@@ -1,0 +1,12 @@
+% changemargin environment
+%
+% Shift margins for a given part of text.
+%	- Negative values : increase margins
+%	- Positives values : decrease margins
+%
+% Parameters :
+%	- offset left : measure value
+%	- offset right : measure value
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+

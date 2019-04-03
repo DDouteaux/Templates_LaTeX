@@ -1,0 +1,102 @@
+% Block paragraph with a background color and a left colored bar.
+% The left bar is 2mm width and located in the margin.
+%
+% Parameters :
+%	- Background color
+%	- Left bar color
+%	- Block name (optional)
+%	- Block subname (optional, used only if block name is given)
+\newenvironment{paragraphWithLeftBar}[4]
+{
+	\renewcommand{\currentColor}{#2}
+	\begin{tcolorbox}[breakable,enhanced,colback=#1,boxrule=0pt,
+					  frame hidden,borderline west={2mm}{0mm}{#2}]
+	\ifstrempty{#3}{}{\textbf{\textcolor{#2}{#3} \ifstrempty{#4}{}{(#4)}}~~}
+}
+{
+	\end{tcolorbox}
+	\renewcommand{\currentColor}{themeColor}
+}
+
+
+% Application of paragraphWithLeftBar for theorems. Numerotation is automatic.
+%
+% Parameters :
+%	- Theorem name
+\newenvironment{theoreme}[1]
+{\begin{paragraphWithLeftBar}{yellow!10!white}{vertforet}{Théorème}{#1}}
+{\end{paragraphWithLeftBar}}
+
+% Application of paragraphWithLeftBar for propositions. Numerotation is automatic.
+%
+% Parameters :
+%	- Proposition name
+\newenvironment{proposition}[1]
+{\begin{paragraphWithLeftBar}{yellow!10!white}{bluesword}{Proposition}{#1}}
+{\end{paragraphWithLeftBar}}
+
+% Application of paragraphWithLeftBar for definitions. Numerotation is automatic.
+%
+% Parameters :
+%	- Definition name
+\newenvironment{definition}[1]
+{\begin{paragraphWithLeftBar}{yellow!10!white}{bordeau}{Définition}{#1}}
+{\end{paragraphWithLeftBar}}
+
+% Application of paragraphWithLeftBar for lemmas. Numerotation is automatic.
+%
+% Parameters :
+%	- Lemma name
+\newenvironment{lemme}[1]
+{\begin{paragraphWithLeftBar}{yellow!10!white}{violet}{Lemme}{#1}}
+{\end{paragraphWithLeftBar}}
+
+\newenvironment{introductoryParagraph}
+{\begin{changemargin}{1cm}{1cm}\itshape}
+{\end{changemargin}}
+
+\newenvironment{exemple}[1]
+{\vskip .2cm\par\noindent\textbf{Exemple -- }\textit{#1}\begin{changemargin}{1cm}{0cm}\setlist{leftmargin=1.5cm}}
+{\end{changemargin}}
+
+\newenvironment{attention}
+{\vskip .2cm\par\noindent\textcolor{bordeau}{\ding{54}~\textbf{Attention~~~~}}}
+{}
+
+\newenvironment{remarque}
+{\vskip .2cm\par\noindent\textcolor{bluesword}{\faCommentingO~\textbf{Remarque~~~~}}}
+{}
+
+\newenvironment{convention}
+{\vskip .2cm\par\noindent\textcolor{vertforet}{\ding{46}~\textbf{Convention~~~~}}}
+{}
+
+\newenvironment{casParticulier}[1]
+{\begin{paragraphWithLeftBar}{yellow!10!white}{violet}{Cas particulier}{#1}}
+{\end{paragraphWithLeftBar}}
+
+\newenvironment{methode}[1]
+{\vskip .2cm\par\noindent\textcolor{vertforet}{\ding{46}~\textbf{Méthode \ifstrempty{#1}{}{(#1)}}~~~~}}
+{}
+
+\newenvironment{lecture}
+{\vskip .2cm\par\noindent\textcolor{vertforet}{\faBook~\textbf{Lecture~~~~}}}
+{}
+
+\newenvironment{information}
+{\vskip .2cm\par\noindent\textcolor{vertforet}{\faBook~\textbf{Information~~~~}}}
+{}
+
+\newenvironment{notation}
+{\vskip .2cm\par\noindent\textcolor{vertforet}{\faBook~\textbf{Notation~~~~}}}
+{}
+
+\newenvironment{demonstration}
+{\vskip .2cm\par\noindent\textbf{Démonstration~~~~}}
+{\proved{}\vskip .2cm}
+
+\newenvironment{paragraphe}[1]
+{\vskip .2cm\par\noindent\textbf{#1~~~~}}
+{}
+
+\setlength{\parindent}{0em}

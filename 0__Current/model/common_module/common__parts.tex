@@ -1,0 +1,11 @@
+\newcommand*\Parttitle{}
+\let\origpart\part
+\renewcommand*{\part}[2][]{%
+   \ifx\\#1\\% optional argument not present?
+      \origpart{#2}%
+      \renewcommand*\Parttitle{#2}%
+   \else
+      \origpart[#1]{#2}%
+      \renewcommand*\Parttitle{#1}%
+   \fi
+}

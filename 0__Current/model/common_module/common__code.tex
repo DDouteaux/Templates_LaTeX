@@ -1,0 +1,106 @@
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{%
+    backgroundcolor=\color{black},%
+    commentstyle=\color{codegreen}\itshape,%
+    keywordstyle=\color{magenta},%
+    numberstyle=\tiny\bfseries\color{white},%
+    stringstyle=\color{codepurple},%
+    basicstyle=\small\linespread{1}\ttfamily\color{white},%
+    breakatwhitespace=false,%
+    breaklines=true,%
+    numbers=left,%
+    numbersep=5pt,%
+    showspaces=false,%
+    showstringspaces=false,%
+    showtabs=false,%
+    tabsize=2,%
+	framesep=0pt,%
+	framerule=0pt,%
+	framexleftmargin=.5cm,%
+	xleftmargin=.5cm,%
+	aboveskip=0cm%
+}
+
+\lstset{style=mystyle}
+
+
+% General environment to embed code. Will create a fullwidth
+% listing env, adapted to given language (ie. with logo, name...)
+% 
+% Parameters:
+%	- location of language logo 
+%	- desired height of language logo
+%	- language name
+%	- code block name (given by user)
+\newcommand\generalCodeCaption[4]{%
+	\noindent\setlength{\fboxsep}{2pt}\newline\fcolorbox{gray!15}{gray!15}{\begin{minipage}{\dimexpr\textwidth-2\fboxsep-2\fboxrule\relax}~\vCenterLstlisting{#1}{#2}~~#3~~--~~#4\end{minipage}}\vspace{-1pt}%
+}
+
+
+% Environment to embed Python 3 code. Will create a
+% fullwidth listing env.
+%
+% Params :
+%	- Code block name
+\lstnewenvironment{python3}[1]
+{
+	\generalCodeCaption{images/python.eps}{1.2em}{Python 3.x}{#1}%
+	\lstset{language=python, style=mystyle}%
+}
+{}
+
+
+% Environment to embed Python code. Will create a
+% fullwidth listing env.
+%
+% Params :
+%	- Code block name
+\lstnewenvironment{python}[1]
+{
+	\generalCodeCaption{images/python.eps}{1.2em}{Python}{#1}%
+	\lstset{language=python, style=mystyle}%
+}
+{}
+
+
+% Environment to embed JAVA code. Will create a
+% fullwidth listing env.
+%
+% Params :
+%	- Code block name
+\lstnewenvironment{java}[1]
+{
+	\generalCodeCaption{images/java.eps}{1.6em}{JAVA}{#1}%
+	\lstset{language=python, style=mystyle}%
+}
+{}
+
+
+% Environment to embed shell code. Will create a
+% fullwidth listing env.
+%
+% Params :
+%	- Code block name
+\lstnewenvironment{shell}[1]
+{
+	\generalCodeCaption{images/java.eps}{1.6em}{Bash}{#1}%
+	\lstset{language=bash, style=mystyle}%
+}
+{}
+
+
+% Environment to embed shell code. Will create a
+% fullwidth listing env.
+%
+% Params :
+%	- Code block name
+\lstnewenvironment{wincmd}[1]
+{
+	\generalCodeCaption{images/java.eps}{1.6em}{Command line}{#1}%
+	\lstset{language=bash, style=mystyle}%
+}
+{}

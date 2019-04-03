@@ -1,0 +1,2477 @@
+\documentclass[11pt,a4paper,rgb]{report}
+
+%% Importation de tous les fichiers de configuration nécessaires.
+\input{model/common__import_all.tex}
+\usepackage{fancyvrb}
+\usepackage{pbox}
+\usepackage[utf8]{inputenc}
+
+\newcommand*{\fvtextcolor}[2]{\textcolor{#1}{#2}}
+\CustomVerbatimCommand{\inCodeStub}{Verb}{commandchars=§?!}
+
+%% Beginning of the file
+\begin{document}
+
+{\Large
+\begin{center}
+DOCUMENTATION DU TEMPLATE DE DOCUMENT
+\vspace*{.4cm}
+\end{center}
+}
+
+\section{Les couleurs}
+\subsection{Cadencier de couleur}
+Ce template fournit par défaut un certain nombre de couleurs. Cette page présente un cadencier de toutes les couleurs prédéfinies. Ces dernières sont composées de la manière suivantes :
+\begin{itemize}
+	\itemperso{}Des couleurs de bases.
+	\itemperso{}Des déclinaisons de ces couleurs virant de plus en plus vers le blanc.
+	\itemperso{}Des couleurs solitaires sans déclinaison.
+\end{itemize}
+\begin{multicols}{4}
+	\noindent\testColors{green1}%
+	\testColors{green3}\testColors{green4}%
+	\testColors{red1}\testColors{red2}\testColors{red3}\testColors{red4}\testColors{red5}\testColors{red6}\testColors{red7}\testColors{red8}\testColors{red9}\testColors{red10}\testColors{red11}%
+	\testColors{blue1}\testColors{blue2}\testColors{blue3}\testColors{blue4}\testColors{blue5}\testColors{blue6}\testColors{blue7}\testColors{blue8}\testColors{blue9}\testColors{blue10}\testColors{blue11}%
+	\testColors{yellow1}\testColors{yellow2}\testColors{yellow3}\testColors{yellow4}\testColors{yellow5}\testColors{yellow6}\testColors{yellow7}\testColors{yellow8}\testColors{yellow9}\testColors{yellow10}\testColors{yellow11}%
+	\testColors{brown1}%
+	\testColors{violet1}\testColors{violet2}\testColors{violet3}\testColors{violet4}\testColors{violet5}\testColors{violet6}\testColors{violet7}\testColors{violet8}\testColors{violet9}\testColors{violet10}\testColors{violet11}%
+	\testColors{orange1}\testColors{orange2}\testColors{orange3}\testColors{orange4}\testColors{orange5}\testColors{orange6}\testColors{orange7}\testColors{orange8}\testColors{orange9}\testColors{orange10}\testColors{orange11}%
+	\testColors{pink1}\testColors{pink2}\testColors{pink3}\testColors{pink4}\testColors{pink5}\testColors{pink6}\testColors{pink7}\testColors{pink8}\testColors{pink9}\testColors{pink10}\testColors{pink11}%
+	\testColors{gray1}\testColors{gray2}\testColors{gray3}\testColors{gray4}\testColors{gray5}\testColors{gray6}\testColors{gray7}\testColors{gray8}\testColors{gray9}\testColors{gray10}\testColors{gray11}%
+	\end{multicols}
+\subsection{Gestion des couleurs dans le document}
+Le document utilise un certain nombre de couleurs prédéfinies, qui peuvent être paramétrées dans le fichier XX :
+\begin{itemize}
+	\itemperso{\texttt{thColor}}La couleur de base du document. Il s'agit de la couleur par défaut utilisée pour colorer les éléments nécessitant de la couleur.
+	\itemperso{\texttt{sectionColor}}La couleur pour le libellé des sections, sous-sections et sous-sous sections.
+	\itemperso{\texttt{sectionNumberColor}}La couleur pour le numéro des sections, sous-sections et sous-sous sections.
+	\itemperso{\texttt{sectionSeparatorColor}}La couleur pour le séparateur entre le numéro de sections, sous-sections et sous-sous section et son libellé.
+\end{itemize}
+
+\section{Les différents types d'écritures}
+Nous listons ici toutes les commandes par défaut permettant de réaliser la mise en forme du texte. Ces commandes viennent en support des commandes traditionnelles pour l'emphase (\inCodeStub¡§fvtextcolor?bordeau!?textbf!¡, \inCodeStub¡§fvtextcolor?bordeau!?textit!¡).
+
+\section{Les différents types de paragraphes}
+\subsection{Remarque générale}
+Par paragraphe, nous entendons ici le style de certaines boîtes de texte pour mettre en avant du contenu. Ce type est défini de manière globale pour tout le document. Ainsi, en parant d'un choix parmi les différents types possibles (section XX), ce choix sera appliqué à tous les paragraphes pré-définis (section XX) et offrira une commande pour créer de nouveaux paragraphes personnalisés basés sur ce dernier.
+
+\subsection{Les différents types de paragraphes}
+
+
+\subsection{Les paragraphes pré-définis}
+\begin{theoreme}{Fondamental de l'arithmétique}
+Ceci est un théorème
+\end{theoreme}
+
+\begin{proposition}{Caractérisation des fonctions croissantes}
+Ceci est une proposition
+\end{proposition}
+
+\begin{definition}{Fonction croissante}
+Ceci est une définition
+\end{definition}
+
+\section{Les différents types de section}
+
+\iffalse
+\resizebox{.5\textwidth}{!}{%
+\vspace*{2.8cm}
+\chapterBackgroundImage{1}{Les nombres complexes}
+}
+
+\resizebox{.5\textwidth}{!}{%
+\vspace*{2.8cm}
+\chapterBackgroundImageTransparencyWithoutToc{1}{Les nombres complexes}
+}
+
+\resizebox{.5\textwidth}{!}{%
+\vspace*{2.8cm}
+\chapterBackgroundImageTransparency{1}{Les nombres complexes}
+}
+
+\resizebox{.5\textwidth}{!}{%
+\chapterBigFigureAndVerticalRule{1}{Les nombres complexes}
+}
+
+\resizebox{.5\textwidth}{!}{%
+\chapterBigFigureAndRule{1}{Les nombres complexes}
+}
+
+\resizebox{.5\textwidth}{!}{
+\vspace*{2.8cm}
+\chapterBigFigureColoredBackground{1}{Les nombres complexes}
+}
+\fi
+
+\section{Commandes pour les environnements mathématiques}
+\subsection{Remarque générale}
+Toutes les commandes présentées ici nécessitent d'être réalisées dans un environnement mathématique \inCodeStub¡§fvtextcolor?bordeau!?$...$!¡ ou \inCodeStub¡§fvtextcolor?bordeau!?\[...\]!¡, sauf mention du contraire.
+
+Pour toutes les commandes suivies du symbole \textcolor{bordeau}{\texttt{*}}, une version hors environnement mathématique existe. Cette version prend les mêmes paramètres en entrée, mais la première lettre de son nom est à mettre en majuscule.
+
+\subsection{Coordonnées}
+
+%%
+%% Coordplan
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\coordplan{!<x>§fvtextcolor?bordeau!?}{!<y>§fvtextcolor?bordeau!?}!¡ -- Coordonnées dans le plan en colonne.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\coordplan{\sqrt{x}}{\dfrac{1}{x^2}}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\coordplan{\sqrt{x}}{\dfrac{1}{x^2}}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Coordp
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\coordp{!<x>§fvtextcolor?bordeau!?}{!<y>§fvtextcolor?bordeau!?}!¡ -- Coordonnées dans le plan en ligne.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\coordp{\sqrt{x}}{\dfrac{1}{x^2}}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\coordp{\sqrt{x}}{\dfrac{1}{x^2}}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Coordesp
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\coordesp{!<x>§fvtextcolor?bordeau!?}{!<y>§fvtextcolor?bordeau!?}{!<z>§fvtextcolor?bordeau!?}!¡ -- Coordonnées dans l'espace en colonne.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\coordesp{\sqrt{x}}{\dfrac{1}{x^2}}{2x}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\coordesp{\sqrt{x}}{\dfrac{1}{x^2}}{2x}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Coorde
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\coorde{!<x>§fvtextcolor?bordeau!?}{!<y>§fvtextcolor?bordeau!?}{!<z>§fvtextcolor?bordeau!?}!¡ -- Coordonnées dans l'espace en ligne.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\coorde{\sqrt{x}}{\dfrac{1}{x^2}}{2x}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\coorde{\sqrt{x}}{\dfrac{1}{x^2}}{2x}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Coordee
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\coordee{!<x>§fvtextcolor?bordeau!?}{!<y>§fvtextcolor?bordeau!?}{!<z>§fvtextcolor?bordeau!?}!¡ -- Coordonnées dans l'espace selon $\vv{\imath}$, $\vv{\jmath}$ et $\vv{k}$.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\coordee{\sqrt{x}}{\dfrac{1}{x^2}}{2x}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\coordee{\sqrt{x}}{\dfrac{1}{x^2}}{2x}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+\subsection{Intervalles}
+\subsection{Noms de vecteurs}
+\subsection{Opérations vectorielles}
+\subsection{Noms de fonctions}
+\subsection{Opérations sur les fonctions}
+\subsection{Dérivation}
+\subsection{Intégration}
+\subsection{Informations textuelles}
+Ces diverses commandes ne sont pas à utiliser dans un environnement mathématique, mais directement dans le texte.
+
+%%
+%% Expara
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\expara{!<name>§fvtextcolor?bordeau!?}!¡ -- Nom de paragraphe pour un exercice
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\expara{Étude d'une fonction}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\expara{Étude d'une fonction}$
+	\end{lstlisting}
+\end{minipage}
+
+Différentes applications sont faites de cette commande pour des noms standards.
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\condn{}\conds{}\analyse{}\ranalyse{}\synthese{}\rsynthese{}\conclusion{}\pconclusion{}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\condn{}$
+	$\conds{}$
+	$\analyse{}$
+	$\ranalyse{}$
+	$\synthese{}$
+	$\rsynthese{}$
+	$\conclusion{}$
+	$\pconclusion{}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+
+
+
+
+
+%%
+%% XXi
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\xxi{!<origine>§fvtextcolor?bordeau!?}{!<nom vecteur>§fvtextcolor?bordeau!?}!¡ -- Afficher le nom d'un repère sur une droite
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\xxi{X}{AB}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\xxi{X}{AB}$
+	\end{lstlisting}
+\end{minipage}
+
+Différentes applications sont faites de cette commande pour des noms standards.
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\oi{}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\oi{}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Xij
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\xij{!<origine>§fvtextcolor?bordeau!?}{!<vecteur x>§fvtextcolor?bordeau!?}{!<vecteur y>§fvtextcolor?bordeau!?}!¡ -- Afficher le nom d'un repère dans un plan
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\xij{X}{AB}{AC}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\xij{X}{AB}{AC}$
+	\end{lstlisting}
+\end{minipage}
+
+Différentes applications sont faites de cette commande pour des noms standards.
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\oij{}$\\$\iij{}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\oij{}$
+	$\iij{}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+
+%%
+%% Xijk
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\xijk{!<origine>§fvtextcolor?bordeau!?}{!<vecteur x>§fvtextcolor?bordeau!?}{!<vecteur y>§fvtextcolor?bordeau!?}{!<vecteur z>§fvtextcolor?bordeau!?}!¡ -- Afficher le nom d'un repère dans l'espace
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\xijk{X}{AB}{AC}{AD}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\xijk{X}{AB}{AC}{AD}$
+	\end{lstlisting}
+\end{minipage}
+
+Différentes applications sont faites de cette commande pour des noms standards.
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\oijk{}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\oijk{}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Glabel
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\glabel{!<lettre>§fvtextcolor?bordeau!?}!¡ -- Police calligraphiée pour les graphes et les noms de courbes
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\glabel{A}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\glabel{A}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Coordi
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\coordi{!<x>§fvtextcolor?bordeau!?}!¡ -- Coordonnées sur l'axe des abscisses selon $\vv{\imath}$.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\coordi{10}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\coordi{10}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Coordj
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\coordj{!<x>§fvtextcolor?bordeau!?}!¡ -- Coordonnées sur l'axe des abscisses selon $\vv{\jmath}$.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\coordj{10}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\coordj{10}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Coordk
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\coordk{!<x>§fvtextcolor?bordeau!?}!¡ -- Coordonnées sur l'axe des abscisses selon $\vv{k}$.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\coordk{10}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\coordk{10}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Suite
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\suite{!<nom>§fvtextcolor?bordeau!?}{!<variable>§fvtextcolor?bordeau!?}{!<ensemble>§fvtextcolor?bordeau!?}!¡ -- Affiche le nom d'une suite.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\suite{x}{n}{\nn^*}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\suite{x}{n}{\nn^*}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Suiteu
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\suiteu{}!¡ -- Raccourci pour une suite nommée $u$ définie sur $\nn$.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\suiteu{}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\suiteu{}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Suitev
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\suitev{}!¡ -- Raccourci pour une suite nommée $v$ définie sur $\nn$.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\suitev{}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\suitev{}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% txvar
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\txvar{!<nom fonction>§fvtextcolor?bordeau!?}{!<nom variable>§fvtextcolor?bordeau!?}!¡ -- Affiche le taux de variation de la fonction selon une variable à prendre différente de $h$..
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\txvar{f}{1}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\txvar{f}{1}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Llim
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\llim{!<variable>§fvtextcolor?bordeau!?}{!<limite>§fvtextcolor?bordeau!?}{!<fonction>§fvtextcolor?bordeau!?}!¡ -- Limite d'une fonction en une valeur et variable données.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\llim{x}{+\infty}{f(x)}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\llim{x}{+\infty}{f(x)}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Lllim
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\lllim{!<variable>§fvtextcolor?bordeau!?}{!<limite>§fvtextcolor?bordeau!?}{!<complément>§fvtextcolor?bordeau!?}{!<fonction>§fvtextcolor?bordeau!?}!¡ -- Limite d'une fonction en une valeur et variable données avec précisions sur la limite. À utiliser notament pour les limites à gauche et à droite.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\lllim{x}{0}{x>0}{f(x)}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\lllim{x}{0}{x>0}{f(x)}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Tendto
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\tendto{!<fonction>§fvtextcolor?bordeau!?}{!<variable>§fvtextcolor?bordeau!?}{!<valeur limite>§fvtextcolor?bordeau!?}!¡ -- Version en ligne de la limite d'une fonction en une valeur, sans préciser la variable.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\tendto{f(x)}{+\infty}{\sqrt{\pi}}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\tendto{f(x)}{+\infty}{\sqrt{\pi}}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Ttendto
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\ttendto{!<focntion>§fvtextcolor?bordeau!?}{!<variable>§fvtextcolor?bordeau!?}{!<limite>§fvtextcolor?bordeau!?}{!<valeur limite>§fvtextcolor?bordeau!?}!¡ -- Version en ligne de la limite d'une fonction en une valeur, en précisant la variable.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\ttendto{f(x,y)}{x}{+\infty}{\sqrt{\pi}}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\ttendto{f(x,y)}{x}{+\infty}{\sqrt{\pi}}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Ip, Im, Ipm
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\ip{}!, §fvtextcolor?bordeau!?\im{}!, §fvtextcolor?bordeau!?\ipm{}!¡ -- Expressions liées à l'infini.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\ip{}$, $\im{}$, $\ipm{}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\ip{}$, $\im{}$, $\ipm{}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Cotan
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\cotan{}!¡ -- Complément aux fonction de trigonométrie circulaire.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\cotan(x)$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\cotan(x)$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+
+%%
+%% Ch, Sh, Tth
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\ch{}!, §fvtextcolor?bordeau!?\sh{}!, §fvtextcolor?bordeau!?\tth{}!, §fvtextcolor?bordeau!?\cotanh{}!¡ -- Fonctions de trigonométrie hyperbolique
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\ch(x)$, $\sh(x)$, $\tth(x)$, $\cotanh(x)$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\ch(x)$, $\sh(x)$, $\tth(x)$, $\cotanh(x)$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Argch, Argsh, Argth
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\argch{}!, §fvtextcolor?bordeau!?\argsh{}!, §fvtextcolor?bordeau!?\argth{}!¡ -- Fonctions réciproques de trigonométrie hyperbolique
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\argch(x)$, $\argsh(x)$, $\argth(x)$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\argch(x)$, $\argsh(x)$, $\argth(x)$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Vect
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\vect{!<nom vecteur>§fvtextcolor?bordeau!?}!¡ -- Nom d'un vecteur
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\vect{w}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\vect{w}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Trans
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\trans{!<nom vecteur>§fvtextcolor?bordeau!?}!¡ -- Expression d'une translation
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\trans{w}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\trans{w}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Homot
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\homot{!<centre>§fvtextcolor?bordeau!?}{!<rapport>§fvtextcolor?bordeau!?}!¡ -- Expression d'une homothétie en fonction de son centre et son rapport.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\homot{O}{\frac{1}{2}}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\homot{O}{\frac{1}{2}}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Vu, Vvv, Vw
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\vu{}!, §fvtextcolor?bordeau!?\vvv{}!, §fvtextcolor?bordeau!?\vw{}!¡ -- Raccourcis pour des noms classiques de vecteurs
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{Les vecteurs $\vu{}$, $\vvv{}$ et $\vw{}$.}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	Les vecteurs $\vu{}$, $\vvv{}$ et $\vw{}$.
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Mathspace, Mathet, Mathssi, Mathalors, Mathavec, Mathie, Mathou, Mathdonc, Mathequiv, Mathimply
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\mathspace{!<taille espacement>§fvtextcolor?bordeau!?}{!<connecteur>§fvtextcolor?bordeau!?}!¡ -- Lier deux éléments d'un raisonnement par un connecteur (ou, donc, alors, $\Leftrightarrow$...) en laissant un espace de chaque côté du connecteur. Le \texttt{<connecteur>} affiché l'est en tant que texte, il faut donc se replacer en contexte mathématique (\texttt{\$...\$}) pour y afficher une formule.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.45\textwidth}{$a^2<b^2\mathspace{1cm}{$(\Rightarrow{}, \Leftarrow{})$?}a<b$.}}
+\hfill
+\begin{minipage}{.60\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$a^2<b^2\mathspace{1cm}{$(\Rightarrow{}, \Leftarrow{})$?}a<b$.
+	\end{lstlisting}
+\end{minipage}
+
+De nombreux usages sont faits de cette commande pour définir tous les connecteurs classiques. Pour chaque redéfinition, l'appel se fait de la forme suivante : \inCodeStub¡§fvtextcolor?bordeau!?\mathconnecteur{!<espacement>§fvtextcolor?bordeau!?}!¡.
+
+\colorbox{blue!15}{\pbox{.45\textwidth}{$a=0\mathet{1cm}b=1$\\$a=0\mathalors{1cm}b=1$\\$a=0\mathavec{1cm}b=1$\\$a=0\mathou{1cm}b=1$\\$a=0\mathdonc{1cm}b=1$\\$a=0\mathimply{1cm}b=1$\\$a\in\mathcal{E}\mathie{1cm}a\in2\zz$\\$a\in\mathcal{E}\mathssi{1cm}a\in2\zz$\\$a\in\mathcal{E}\mathequiv{1cm}a\in2\zz$}}
+\hfill
+\begin{minipage}{.60\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$a=0\mathet{1cm}b=1$
+	$a=0\mathalors{1cm}b=1$
+	$a=0\mathavec{1cm}b=1$
+	$a=0\mathou{1cm}b=1$
+	$a=0\mathdonc{1cm}b=1$
+	$a=0\mathimply{1cm}b=1$
+	$a\in\mathcal{E}\mathie{1cm}a\in2\zz$
+	$a\in\mathcal{E}\mathssi{1cm}a\in2\zz$
+	$a\in\mathcal{E}\mathequiv{1cm}a\in2\zz$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Mathequivsub
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\mathequivsub{!<espacement>§fvtextcolor?bordeau!?}{!<précisions>§fvtextcolor?bordeau!?}!¡ -- Lier deux éléments de raisonnement pas un symbole $\Longleftrightarrow$ associés à une précision sous le symbôle. Utilise la commande \inCodeStub¡§fvtextcolor?bordeau!?\mathspace!¡ vue précédement.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$a\in\mathcal{E}\mathequivsub{.75cm}{(\star)}a\in\zz$.}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$a\in\mathcal{E}\mathequivsub{.75cm}{(\star)}a\in\zz$.
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Infequiv
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\infequiv{!<expression>§fvtextcolor?bordeau!?}{!<précisions>§fvtextcolor?bordeau!?}{!<équivalent>§fvtextcolor?bordeau!?}!¡ -- Équivalence d'une expression en une valeur.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\infequiv{f(x)}{\ip{}}{o\left(\dfrac{1}{x}\right)}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\infequiv{f(x)}{\ip{}}{o\left(\dfrac{1}{x}\right)}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Cont
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\cont{!<classe continuité>§fvtextcolor?bordeau!?}!¡ -- Classe de continuité d'une fonction.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\cont{1}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\cont{1}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Continue
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\continue{!<classe continuité>§fvtextcolor?bordeau!?}{!<ensemble de départ>§fvtextcolor?bordeau!?}{!<ensemble d'arrivée>§fvtextcolor?bordeau!?}!¡ -- Classe de continuité d'une fonction en précisant les ensembles d'arrivée et de départ.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\continue{1}{\rr}{\rr^*}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\continue{1}{\rr}{\rr^*}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Cinf
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\cinf{}!¡ -- Classe de continuité infinie pour une fonction.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\cinf{}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\cinf{}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Eqnlabel
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\eqnlabel{!<label>§fvtextcolor?bordeau!?}!¡ -- Libellé d'une équation.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\eqnlabel{E}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\eqnlabel{E}$
+	\end{lstlisting}
+\end{minipage}
+
+Cette forme de base est ensuite réutilisée pour les différentes formes de labels d'équations, indicées ou non.
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\eqn{E}$\\$\eqnp{E}{1}$\\$\eqnt{E}{continuité}$\\$\eqnsol{S}{1}$\\$\eqnsolt{S}{continuité}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\eqn{E}$
+	$\eqnp{E}{1}$
+	$\eqnt{E}{continuité}$
+	$\eqnsol{S}{1}$
+	$\eqnsolt{S}{continuité}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% \Rrp \Rr \Rrd \Rrm \Rrpe \Rrme \Rre \Pp \Cc \Cce \Ccd \Nn \Nne \Nnd \Zz \Zzd \Zze \Qq \Uu \Kk
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\cc{}!, §fvtextcolor?bordeau!?\cce{}!, §fvtextcolor?bordeau!?\ccd{}!, §fvtextcolor?bordeau!?\nn{}!, §fvtextcolor?bordeau!?\nne{}!, §fvtextcolor?bordeau!?\nnd{}!, §fvtextcolor?bordeau!?\qq{}!, §fvtextcolor?bordeau!?\uu{}!, §fvtextcolor?bordeau!?\kk{}!, §fvtextcolor?bordeau!?\pp{}!, §fvtextcolor?bordeau!?\rrp{}!, §fvtextcolor?bordeau!?\rr{}!¡\newline
+\inCodeStub¡§fvtextcolor?bordeau!?\rrd{}!, §fvtextcolor?bordeau!?\rrm{}!, §fvtextcolor?bordeau!?\rrpe{}!, §fvtextcolor?bordeau!?\rrme{}!, §fvtextcolor?bordeau!?\rre{}!, §fvtextcolor?bordeau!?\zz{}!, §fvtextcolor?bordeau!?\zzd{}!, §fvtextcolor?bordeau!?\zze{}!¡ -- Noms d'ensembles communs.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\rr{}~\rre{}~\rrd{}~\rrm{}~\rrme{}~\rrp{}~\rrpe{}$\\$\cc{}~\cce{}~\ccd{}$\\$\nn{}~\nne{}~\nnd{}$\\$\zz{}~\zze{}~\zzd{}$\\$\qq{}~\uu{}~\kk{}~\pp{}$}}
+\hfill
+\begin{minipage}{.7\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\rr{} \rre{} \rrd{} \rrm{} \rrme{} \rrp{} \rrpe{}$
+	$\cc{} \cce{} \ccd{}$
+	$\nn{} \nne{} \nnd{}$
+	$\zz{} \zze{} \zzd{}$
+	$\qq{} \uu{} \kk{} \pp{}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Uui
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\uui{!<n>§fvtextcolor?bordeau!?}!¡ -- Groupe des racines n-ième de l'unité.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\uui{6}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\uui{6}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Rectvect
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\rectvect{!<x>§fvtextcolor?bordeau!?}{!<y>§fvtextcolor?bordeau!?}!¡ -- Coordonnées d'un vecteur entre crochets et en colonne.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\rectvect{\dfrac{1}{2}}{2}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\rectvect{\dfrac{1}{2}}{2}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Aavect
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\aavect{!<x>§fvtextcolor?bordeau!?}{!<nom vecteur x>§fvtextcolor?bordeau!?}{!<y>§fvtextcolor?bordeau!?}{!<nom vecteur y>§fvtextcolor?bordeau!?}!¡ -- Coordonnées d'un vecteur entre parenthèses, en ligne et en notant les vecteurs de la base.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\aavect{\dfrac{1}{2}}{\imath}{2}{\jmath}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\aavect{\dfrac{1}{2}}{\imath}{2}{\jmath}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Avect
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\avect{!<x>§fvtextcolor?bordeau!?}{!<y>§fvtextcolor?bordeau!?}!¡ -- Coordonnées d'un vecteur entre parenthèses et en ligne.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.25\textwidth}{$\avect{\dfrac{1}{2}}{2}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\avect{\dfrac{1}{2}}{2}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Exercice
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\exercice{!<numéro exercice>§fvtextcolor?bordeau!?}{!<énoncé>§fvtextcolor?bordeau!?}!¡ -- Paragraphe pour introduire un exercice
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+%\colorbox{blue!15}{\pbox{.35\textwidth}{\exercice{2}{Énoncé...}}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	\exercice{2}{Énoncé...}
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Exerciceds
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\exerciceds{!<numéro exercice>§fvtextcolor?bordeau!?}{!<énoncé>§fvtextcolor?bordeau!?}!¡ -- Paragraphe pour introduire un exercice dont l'énoncé est mis à la ligne
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+%\colorbox{blue!15}{\pbox{.35\textwidth}{\exerciceds{2}{Énoncé...}}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	\exerciceds{2}{Énoncé...}
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% norm
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\norm{!<vecteur>§fvtextcolor?bordeau!?}!¡ -- Barres de normes d'un vecteur.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\norm{\dfrac{1}{2}\vect{u}}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\norm{\dfrac{1}{2}\vect{u}}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Vnorm
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\vnorm{}!¡ -- Raccourci pour écrire la norme d'un vecteur $\vu$.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\vnorm{}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\vnorm{}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Prodscal
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\prodscal{!<premier vecteur>§fvtextcolor?bordeau!?}{!<second vecteur>§fvtextcolor?bordeau!?}!¡ -- Produit scalaire entre deux vecteurs, les noms sont fournis directement, car la commande place les flèches sur les noms de vecteurs.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\prodscal{u}{v}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\prodscal{u}{v}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Fctdisp
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\fctdisp{!<nom>§fvtextcolor?bordeau!?}{!<ensemble départ>§fvtextcolor?bordeau!?}{!<ensemble arrivée>§fvtextcolor?bordeau!?}{!<variable>§fvtextcolor?bordeau!?}{!<expression>§fvtextcolor?bordeau!?}!¡ -- Affichage d'une fonction sur deux lignes avec accolade.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\fctdisp{f}{\rre}{\rr}{x}{\dfrac{1}{x}}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\fctdisp{f}{\rre}{\rr}{x}{\dfrac{1}{x}}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Fctdispd
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\fctdispd{!<nom>§fvtextcolor?bordeau!?}{!<ensemble départ>§fvtextcolor?bordeau!?}{!<ensemble arrivée>§fvtextcolor?bordeau!?}{!<variable>§fvtextcolor?bordeau!?}{!<expression 1>§fvtextcolor?bordeau!?}!¡\newline
+\phantom{i}~~~~~~~~~~~~~~~~~\inCodeStub¡§fvtextcolor?bordeau!?{!<variable>§fvtextcolor?bordeau!?}{!<expression 2>§fvtextcolor?bordeau!?}!¡ -- Affichage d'une fonction sur deux lignes avec accolade.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\fctdispd{f}{\rre}{\rr}{x}{\dfrac{1}{x}&\textnormal{~~si }x>0}{x}{-\dfrac{1}{x}&\textnormal{~~si }x\leq0}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\fctdispd{f}{\rre}{\rr}%
+	{x}{\dfrac{1}{x} &\textnormal{~~si }x>0}%
+	{x}{-\dfrac{1}{x} &\textnormal{~~si }x\leq0}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Fctdispsmall
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\fctdispsmall{!<nom>§fvtextcolor?bordeau!?}{!<ensemble de départ>§fvtextcolor?bordeau!?}{!<ensemble d'arrivée>§fvtextcolor?bordeau!?}!¡ -- Affichage simplifiée d'une fonction avec uniquement les ensembles de définition.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\fctdispsmall{f}{\rr}{\rre}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\fctdispsmall{f}{\rr}{\rre}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Fctdispsmallb
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\fctdispsmallb{!<nom>§fvtextcolor?bordeau!?}{!<ensemble de départ>§fvtextcolor?bordeau!?}{!<ensemble d'arrivée>§fvtextcolor?bordeau!?}!¡ -- Affichage simplifiée d'une fonction sous la forme d'une flèche liant les ensembles de définition et surmontée du nom de la fonction.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\fctdispsmallb{f}{\rr}{\rre}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\fctdispsmallb{f}{\rr}{\rre}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Fctdispsmallm
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\fctdispsmallm{!<nom>§fvtextcolor?bordeau!?}{!<variable>§fvtextcolor?bordeau!?}{!<expression>§fvtextcolor?bordeau!?}!¡ -- Affichage simplifiée d'une fonction avec uniquement la variable et l'expression.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\fctdispsmallm{f}{x}{\dfrac{1}{x}}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\fctdispsmallm{f}{x}{\dfrac{1}{x}}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Fctdispminimal
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\fctdispminimal{!<variable>§fvtextcolor?bordeau!?}{!<expression>§fvtextcolor?bordeau!?}!¡ -- Affichage simplifiée d'une fonction avec uniquement la variable et l'expression et sans le nom.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\fctdispminimal{x}{\dfrac{1}{x}}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\fctdispminimal{x}{\dfrac{1}{x}}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Curvenn
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\curvenn{!<nom courbe>§fvtextcolor?bordeau!?}{!<indice>§fvtextcolor?bordeau!?}!¡ -- Affichage d'un nom de courbe.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\curvenn{C}{1}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\curvenn{C}{1}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Tddet
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\tddet{!<valeur 1>§fvtextcolor?bordeau!?}{!<valeur 2>§fvtextcolor?bordeau!?}{!<valeur 3>§fvtextcolor?bordeau!?}{!<valeur 4>§fvtextcolor?bordeau!?}!¡ -- Déterminant de taille $2\times2$.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\tddet{1}{2}{3}{4}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\tddet{1}{2}{3}{4}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Overbar
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\overbar{!<valeur>§fvtextcolor?bordeau!?}!¡ -- Conjugué ou complémentaire d'une valeur.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\overbar{z_1-z_2}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\overbar{z_1-z_2}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Rep et Imp
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\rep{!<valeur>§fvtextcolor?bordeau!?}!, §fvtextcolor?bordeau!?\imp{!<valeur>§fvtextcolor?bordeau!?}!¡ -- Parties réelles et imaginaire d'un complexe.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$z=\rep{z}+i\imp{z}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$z=\rep{z}+i\imp{z}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Zarg
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\zarg{!<valeur>§fvtextcolor?bordeau!?}!¡ -- Argument d'un complexe.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\zarg{z}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\zarg{z}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Textenum
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\textenum{!<élément 1>§fvtextcolor?bordeau!?}{!<élément 2>§fvtextcolor?bordeau!?}{!<élément 3>§fvtextcolor?bordeau!?}!¡ -- Énumération d'éléments mathématiques dans un texte.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{Soient $\textenum{x}{y}{z}$...}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	Soient $\textenum{x}{y}{z}$...
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Textenumq
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\textenumq{!<élément 1>§fvtextcolor?bordeau!?}{!<élément 2>§fvtextcolor?bordeau!?}{!<élément 3>§fvtextcolor?bordeau!?}{!<élément 4>§fvtextcolor?bordeau!?}!¡ -- Énumération de quatre éléments mathématiques.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{Soient $\textenumq{x}{y}{z}{\alpha}$...}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	Soient $\textenumq{x}{y}{z}{\alpha}$...
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Dropsign
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\dropsign{!<symbole>§fvtextcolor?bordeau!?}!¡ -- Déporte un symbole en bas à gauche sous l'interligne.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\hspace{.35cm}\pbox{.35\textwidth}{b$\dropsign{\times}$b\\Voici}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	b$\dropsign{\times}$b\\Voici
+	\end{lstlisting}
+\end{minipage}
+
+Cette fonctionnalité est en partie utilisée pour écrire des divisions euclidiennes.
+
+\colorbox{blue!15}{\pbox{.55\textwidth}{\hspace{0.4cm}$
+  \begin{array}{r|r}
+    \dropsign{-} 4x^4 - 12x^2 + 4x + 4 & 4x^3 - 6x + 1 \\ \cline{2-2}
+    4x^4 + \phantom{1}6x^2 + \phantom{4}x \phantom{{}+4} & \phantom{4x^3 - 6}x\phantom{ {}+ 4}\\ \cline{1-1} \\[\dimexpr-\normalbaselineskip+\jot]
+    \phantom{4x^4 +} 6x^2 + 3x + 4 \\
+  \end{array}
+$\rule{.1cm}{0pt}}}
+\hfill
+\begin{minipage}{.55\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	\begin{array}{r|r}
+		\dropsign{-} 4x^4 - 12x^2 + 4x + 4 & 4x^3 - 6x + 1 \\ \cline{2-2}
+		4x^4 + \phantom{1}6x^2 + \phantom{4}x \phantom{{}+4} & \phantom{4x^3 - 6}x\phantom{ {}+ 4}\\ \cline{1-1} \\[\dimexpr-\normalbaselineskip+\jot]
+		\phantom{4x^4 +} 6x^2 + 3x + 4 \\
+	\end{array}
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Pge
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\pge{!<ensemble>§fvtextcolor?bordeau!?}!¡ -- Plus grand élément d'un ensemble.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\pge{E}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\pge{E}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Pgcd
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\pgcd{!<valeur 1>§fvtextcolor?bordeau!?}{!<valeur 2>§fvtextcolor?bordeau!?}!¡ -- PGCD de deux valeurs
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\pgcd{a_1}{a_2}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\pgcd{a_1}{a_2}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Ppcm
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\ppcm{!<valeur 1>§fvtextcolor?bordeau!?}{!<valeur 2>§fvtextcolor?bordeau!?}!¡ -- PPCM de deux valeurs
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\ppcm{a_1}{a_2}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\ppcm{a_1}{a_2}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Comp
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\comp{!<fonction 1>§fvtextcolor?bordeau!?}{!<fonction 2>§fvtextcolor?bordeau!?}!¡ -- Composée de deux fonctions.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\comp{f_1}{f_2}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\comp{f_1}{f_2}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Compt
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\compt{!<fonction 1>§fvtextcolor?bordeau!?}{!<fonction 2>§fvtextcolor?bordeau!?}{!<fonction 3>§fvtextcolor?bordeau!?}!¡ -- Raccourci pour la composée de trois fonctions.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\compt{f_1}{f_2}{f_3}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\compt{f_1}{f_2}{f_3}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Comptt
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\comptt{!<fonction>§fvtextcolor?bordeau!?}{!<fonction encadrante>§fvtextcolor?bordeau!?}!¡ -- Fonction composée avec une fonction et son inverse.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\comptt{f}{\varphi}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\comptt{f}{\varphi}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Fctid
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\fctid{!<ensemble>§fvtextcolor?bordeau!?}!¡ -- Fonction identité sur un ensemble.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\fctid{E}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\fctid{E}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Proved
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\proved{}!¡ -- Carré noire pour terminer une preuve. S'aligne à droite en fin de ligne.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\begin{minipage}{.30\textwidth}CQFD.\proved{}\end{minipage}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	CQFD.\proved{}
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Equationlabel
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\equationlabel{!<équation>§fvtextcolor?bordeau!?}{!<label>§fvtextcolor?bordeau!?}{!<numéro>§fvtextcolor?bordeau!?}!¡ -- Raccourci pour afficher une équation et lui associer un nom ainsi qu'un label pour références futures.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\begin{minipage}{.30\textwidth}\equationlabel{a=b}{moneqn}{1}\newline
+Équation~\ref{moneqn}\end{minipage}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	\equationlabel{a=b}{moneqn}{1}
+	Équation~\ref{moneqn}
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Questlabel
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\questlabel{!<numéro>§fvtextcolor?bordeau!?}!¡ -- Numérotation d'une question en accord avec le style des exercices.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{\questlabel{1.a}}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	\questlabel{1.a}
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Perm
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\perm{!<nombre permutations>§fvtextcolor?bordeau!?}!¡ -- Groupe des permutations
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\perm{3}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\perm{3}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Conj
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\conj{!<fonction 1>§fvtextcolor?bordeau!?}{!<fonction 2>§fvtextcolor?bordeau!?}!¡ -- Conjugaison de deux fonctions.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\conj{f}{g}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\conj{f}{g}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Parent
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\parent{!<expression>§fvtextcolor?bordeau!?}!¡ -- Mettre une expression entre parenthèses.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\parent{\dfrac{1}{2}}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\parent{\dfrac{1}{2}}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Intcroch
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\intcroch{!<expression>§fvtextcolor?bordeau!?}{!<borne inférieure>§fvtextcolor?bordeau!?}{!<borne supérieure>§fvtextcolor?bordeau!?}!¡ -- Écriture en crochet pour évaluer la différence d'une expression entre sa borne supérieure et sa borne inférieure lors d'un calcul intégral.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\intcroch{f(x)}{0}{2}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\intcroch{f(x)}{0}{2}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Zconj
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\zconj{!<complexe>§fvtextcolor?bordeau!?}!¡ -- Conjugué d'un nombre complexe.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\zconj{z_1}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\zconj{z_1}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Congr
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\congr{!<classe de congruence>§fvtextcolor?bordeau!?}!¡ -- Mise en forme de la classe de congruence.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{une expression$\congr{2\pi}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	une expression$\congr{2\pi}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Congru
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\congr{!<valeur 1>§fvtextcolor?bordeau!?}{!<valeur 2>§fvtextcolor?bordeau!?}{!<classe de congruence>§fvtextcolor?bordeau!?}!¡ -- Écriture d'une congruence.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\congru{a}{b}{2\pi}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\congru{a}{b}{2\pi}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Ncongru
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\ncongr{!<valeur 1>§fvtextcolor?bordeau!?}{!<valeur 2>§fvtextcolor?bordeau!?}{!<classe de congruence>§fvtextcolor?bordeau!?}!¡ -- Écriture d'une non congruence.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\ncongru{a}{b}{2\pi}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\ncongru{a}{b}{2\pi}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Card
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\card{!<ensemble>§fvtextcolor?bordeau!?}!¡ -- Cardinal d'un ensemble.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\card{E}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\card{E}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Dist
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\dist{!<point 1>§fvtextcolor?bordeau!?}{!<point 2>§fvtextcolor?bordeau!?}!¡ -- Distance entre deux points.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\dist{A}{B}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\dist{A}{B}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Entint
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\entint{!<borne inférieure>§fvtextcolor?bordeau!?}{!<borne supérieure>§fvtextcolor?bordeau!?}!¡ -- Intervalle fermé d'entiers.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\entint{1}{n}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\entint{1}{n}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Intint
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\intint{!<délimiteur inf>§fvtextcolor?bordeau!?}{!<borne inf>§fvtextcolor?bordeau!?}{!<borne sup>§fvtextcolor?bordeau!?}{!<délimiteur sup>§fvtextcolor?bordeau!?}!¡ -- Intervalle s'adaptant à la taille de son contenu pour lequel les délimiteurs et les valeurs limites sont à préciser.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\intint{]}{1}{\dfrac{3}{2}}{]}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\intint{]}{1}{\dfrac{3}{2}}{]}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Closeint
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\closeint{!<borne inférieur>§fvtextcolor?bordeau!?}{!<borne supérieure>§fvtextcolor?bordeau!?}!¡ -- Intervalle fermé s'adaptant à son contenu.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\closeint{1}{\dfrac{3}{2}}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\closeint{1}{\dfrac{3}{2}}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Tq
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\tq{}!¡ -- Affichage de la barre signifiant \og tel que\fg{} dans la description d'un ensemble par exemple.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\{x\in E \tq{} x\leq0\}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\{x\in E \tq{} x\leq0\}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Ddfrac
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\ddfrac{!<numérateur>§fvtextcolor?bordeau!?}{!<dénominateur>§fvtextcolor?bordeau!?}!¡ -- Extension de \texttt{dfrac} n'appliquant pas de réductions de police au numérateur et au dénominateur. À utiliser avec parcimonie, car peut rendre la lecture plus difficile.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\ddfrac{\frac{1+x}{y}}{\frac{y}{x}}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\ddfrac{\frac{1+x}{y}}{\frac{y}{x}}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Diffdchar, Dd
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\diffdchar{}!, §fvtextcolor?bordeau!?\dd{}!¡ -- Caractère différentiel droit pour les dérivées.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\diffdchar{}$~$\dd{}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\diffdchar{}$~$\dd{}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% der
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\der{!<variable>§fvtextcolor?bordeau!?}!¡ -- Dérivée par rapport à la variable.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\der{x}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\der{x}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% dder
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\dder{!<fonction>§fvtextcolor?bordeau!?}{!<variable>§fvtextcolor?bordeau!?}!¡ -- Dérivée d'une fonction par rapport à la variable.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\dder{f}{x}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\dder{f}{x}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% dderp
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\dderp{!<fonction>§fvtextcolor?bordeau!?}{!<variable>§fvtextcolor?bordeau!?}{!<ordre>§fvtextcolor?bordeau!?}!¡ -- Dérivée d'une fonction par rapport à la variable à un ordre donné.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\dderp{f}{x}{2}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\dderp{f}{x}{2}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Integrale
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\integrale{!<bornes et expression>§fvtextcolor?bordeau!?}{!<variable>§fvtextcolor?bordeau!?}!¡ -- Intégrale d'une fonction données, en précisant ou non les bornes, et en fournissant la variable par rapport à laquelle l'intégration est réalisée.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\integrale{_0^1f(x)}{x}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\integrale{_0^1f(x)}{x}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Ecrbase
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\ecrbase{!<nombre>§fvtextcolor?bordeau!?}{!<base>§fvtextcolor?bordeau!?}!¡ -- Écriture d'un nombre dans une base donnée.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\ecrbase{1001010}{2}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\ecrbase{1001010}{2}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Fctname
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\fctname{!<lettre majuscule>§fvtextcolor?bordeau!?}!¡ -- À définir.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\fctname{A}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\fctname{A}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Angps
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\angps{!<vecteur 1>§fvtextcolor?bordeau!?}{!<vecteur 2>§fvtextcolor?bordeau!?}!¡ -- Produit scalaire entre deux vecteur, notation non pointée.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\angps{\vect{u}}{\vect{v}}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\angps{\vect{u}}{\vect{v}}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Transp
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\transp{}!¡ -- Notation de la transposition.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\transp{}M$, $M\transp{}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\transp{}M$, $M\transp{}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Entpartname
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\entpartname{}!¡ -- Fonction partie entière.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\entpartname{}(3.5)$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\entpartname{}(3.5)$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Entpart
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\entpart{}!¡ -- Fonction partie entière appliquée à une valeur.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\entpart{\dfrac{3}{2}}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\entpart{\dfrac{3}{2}}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Complexitealg
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\complexitealg{!<complexité>§fvtextcolor?bordeau!?}!¡ -- Écriture de la complexité algorithmique.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\complexitealg{n^2}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\complexitealg{n^2}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Complexitealgsub
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\complexitealgsub{!<complexité>§fvtextcolor?bordeau!?}{!<détail>§fvtextcolor?bordeau!?}!¡ -- Écriture de la complexité algorithmique avec précision sur l'algorithme.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\complexitealgsub{n\ln(n)}{quick sort}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\complexitealgsub{n\ln(n)}{quick sort}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Eqna
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\eqna{!<système>§fvtextcolor?bordeau!?}!¡ -- Alignement d'équations, sans accolades. Les informations d'alignement sont contenues dans le paramètre fourni. Il n'est pas nécessaire de détailler les différentes colonnes possibles.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\eqna{
+	\parent{\ch(x)}^3&=\parent{\dfrac{e^x+e^{-x}}{2}}^3\\
+	                 &=...\\
+	                 &=\frac{1}{4}\ch(3x)+\frac{3}{4}\ch(x)
+}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\eqna{
+	\parent{\ch(x)}^3&=\parent{\dfrac{e^x+e^{-x}}{2}}^3\\
+	                 &=...\\
+	                 &=\frac{1}{4}\ch(3x)+\frac{3}{4}\ch(x)
+	}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Syst
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\syst{!<système>§fvtextcolor?bordeau!?}!¡ -- Alignement d'équations, avec accolades. Les informations d'alignement sont contenues dans le paramètre fourni. Il n'est pas nécessaire de détailler les différentes colonnes possibles.
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$y=\argch(x)\mathequiv{.25cm}\syst{x&=\ch(y)\\y&\geq0}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$y=\argch(x)\mathequiv{.25cm}\syst{x&=\ch(y)\\y&\geq0}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+%%
+%% Systa
+%%
+\vspace*{.75cm}
+
+\inCodeStub¡§fvtextcolor?bordeau!?\systa{!<en têtes colonnes>§fvtextcolor?bordeau!?}{!<système>§fvtextcolor?bordeau!?}!¡ -- Alignement d'équations, avec accolades et colonnes spécifiques pour ranger les différents termes. Il s'agit de la forme la plus contraignante de systèmes proposée, à utiliser dans le cas où l'alignement des termes à une utilité forte (pivot de Gauss par exemple).
+
+\setlength{\leftskip}{.75cm}%
+\setlength{\textwidth}{17.25cm}%
+
+\colorbox{blue!15}{\pbox{.35\textwidth}{$\systa{rororor}{%
+	x  & + &ay & - & z  & = & \beta \\
+	ax & + & y & + & 2z & = & \alpha\\
+	2x & - & y & - & z  & = & \gamma}$}}
+\hfill
+\begin{minipage}{.65\textwidth}
+	\begin{lstlisting}[linewidth=\textwidth, language={[LaTeX]TeX}]
+	$\systa{rororor}{%
+	x  & + &ay & - & z  & = & \beta \\
+	ax & + & y & + & 2z & = & \alpha\\
+	2x & - & y & - & z  & = & \gamma}$
+	\end{lstlisting}
+\end{minipage}
+
+\setlength{\leftskip}{0pt}
+\setlength{\textwidth}{18cm}%
+
+
+\end{document}
