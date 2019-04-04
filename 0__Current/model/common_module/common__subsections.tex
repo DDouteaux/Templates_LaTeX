@@ -3,5 +3,5 @@
 % All chapter implementations expect this behaviour.
 \titleformat{\subsection}
   {\fontsize{15pt}{0pt}\selectfont}{}{0em}
-  {\subsectionBasic{\thesubsection}{#1}}
+  {\applySectionFormat{\subsectionStyle}{\thesubsection}{#1}}
 \titlespacing*{\chapter}{0em}{0em}{0em}[0em]

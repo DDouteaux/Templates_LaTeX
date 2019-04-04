@@ -3,6 +3,6 @@
 % All chapter implementations expect this behaviour.
 \titleformat{\subsubsection}
   {\fontsize{13pt}{0pt}\selectfont}{}{0em}
-  {\stepcounter{subsubsection}\subsubsectionBasic{\thesubsubsection}{#1}}
+  {\applySectionFormat{\subsubsectionStyle}{\thesubsubsection}{#1}}
 
 \renewcommand\thesubsubsection{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}

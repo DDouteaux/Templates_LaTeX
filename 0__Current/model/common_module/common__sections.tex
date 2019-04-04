@@ -3,6 +3,6 @@
 % All chapter implementations expect this behaviour.
 \titleformat{\section}
   {\fontsize{17pt}{0pt}\selectfont}{}{0em}
-  {\sectionGreatNumber{\thesection}{#1}}
+  {\applySectionFormat{\sectionStyle}{\thesection}{#1}}
 
 \renewcommand\thesection{\arabic{section}}
