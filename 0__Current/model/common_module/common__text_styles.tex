@@ -4,8 +4,37 @@
 %                                                                     %
 %%-------------------------------------------------------------------%%
 
+% Text bold and italic simultaneously
+%
+% Parameters :
+%   - Text to which you want to apply the style
 \newcommand\textbi[1]{\textbf{\textit{#1}}}
 
+
+% Text bold, italic and with given color simultaneously
+%
+% Parameters :
+%   - Text to which you want to apply the style
+%   - The color to apply
 \newcommand\textbic[2]{\textcolor{#2}{\textbf{\textit{#1}}}}
 
+
+% Text bold, italic and in theme color simultaneously
+%
+% Parameters :
+%   - Text to which you want to apply the style
 \newcommand\textbith[1]{\thColor{\textbf{\textit{#1}}}}
+
+
+% Text bold and in theme color simultaneously
+%
+% Parameters :
+%   - Text to which you want to apply the style
+\newcommand\textbth[1]{\thColor{\textbf{#1}}}
+
+
+% Text italic and in theme color simultaneously
+%
+% Parameters :
+%   - Text to which you want to apply the style
+\newcommand\textith[1]{\thColor{\textit{#1}}}
