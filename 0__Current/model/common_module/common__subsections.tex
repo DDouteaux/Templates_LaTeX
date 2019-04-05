@@ -2,6 +2,14 @@
 % We basically remove all spaces before chapter in order to align it with its expected vertical position.
 % All chapter implementations expect this behaviour.
 \titleformat{\subsection}
-  {\fontsize{15pt}{0pt}\selectfont}{}{0em}
-  {\applySectionFormat{\subsectionStyle}{\thesubsection}{#1}}
+  {\fontsize{15pt}{0pt}\selectfont}
+  {}
+  {0em}
+  {%
+    \applySectionFormat{\subsectionStyle}%
+    {\sectionNumberFormating{\subsectionNumberStyle}{\subsectionNumberSize}{\subsectionNumberColor}{\thesubsection}}%
+    {\sectionSeparatorFormating{\subsectionSeparatorStyle}{\subsectionSeparatorSize}{\subsectionSeparatorColor}{\subsectionSeparator}}%
+    {\sectionNameFormating{\subsectionNameStyle}{\subsectionNameSize}{\subsectionNameColor}{#1}}%
+  }
+
 \titlespacing*{\chapter}{0em}{0em}{0em}[0em]

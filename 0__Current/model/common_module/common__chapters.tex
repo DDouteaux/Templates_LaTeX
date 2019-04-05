@@ -2,14 +2,28 @@
 % We basically remove all spaces before chapter in order to align it with its expected vertical position.
 % All chapter implementations expect this behaviour.
 \titleformat{\chapter}
-  {\fontsize{17pt}{0pt}\selectfont}{}{0em}
-  {\sectionBackgroundImageTransparency{\thechapter}{#1}}
+  {\fontsize{17pt}{0pt}\selectfont}
+  {}
+  {0em}
+  {%
+    \applySectionFormat{\chapterStyle}%
+    {\sectionNumberFormating{\chapterNumberStyle}{\chapterNumberSize}{\chapterNumberColor}{\thechapter}}%
+    {\sectionSeparatorFormating{\chapterSeparatorStyle}{\chapterSeparatorSize}{\chapterSeparatorColor}{\chapterSeparator}}%
+    {\sectionNameFormating{\chapterNameStyle}{\chapterNameSize}{\chapterNameColor}{#1}}%
+  }
 
 \titlespacing*{\chapter}{0em}{0em}{0em}[0em]
 
 \titleformat{name=\chapter,numberless}
-  {\fontsize{17pt}{0pt}\selectfont}{}{0em}
-  {\chapterBackgroundImageTransparencyWithoutToc{#1}}
+  {\fontsize{17pt}{0pt}\selectfont}
+  {}
+  {0em}
+  {%
+    \applySectionFormat{\chapterStyle}%
+    {\sectionNumberFormating{\chapterNumberStyle}{\chapterNumberSize}{\chapterNumberColor}{\thechapter}}%
+    {\sectionSeparatorFormating{\chapterSeparatorStyle}{\chapterSeparatorSize}{\chapterSeparatorColor}{\chapterSeparator}}%
+    {\sectionNameFormating{\chapterNameStyle}{\chapterNameSize}{\chapterNameColor}{#1}}%
+  }
 
 % Chapters partial toc style
 %

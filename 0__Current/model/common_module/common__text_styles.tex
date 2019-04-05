@@ -4,37 +4,92 @@
 %                                                                     %
 %%-------------------------------------------------------------------%%
 
+%% LIST OF AVAILABLE TEXT STYLES 
+%%    - textbi : bold and italic
+%%    - textbic : bold, italic and color
+%%    - textbith : bold, italic and theme color
+%%    - textbth : bold and theme color
+%%    - textith : italic and theme color
+%%    - textit : italic
+%%    - textth : theme color
+%%    - textbf : bold
+%%    - textsc : small capital
+%%    - textscth : small capital theme color
+%%    - basic : nothing
+
+
 % Text bold and italic simultaneously
 %
 % Parameters :
-%   - Text to which you want to apply the style
+% - Text to which you want to apply the style
 \newcommand\textbi[1]{\textbf{\textit{#1}}}
 
 
 % Text bold, italic and with given color simultaneously
 %
 % Parameters :
-%   - Text to which you want to apply the style
-%   - The color to apply
+% - Text to which you want to apply the style
+% - The color to apply
 \newcommand\textbic[2]{\textcolor{#2}{\textbf{\textit{#1}}}}
 
 
 % Text bold, italic and in theme color simultaneously
 %
 % Parameters :
-%   - Text to which you want to apply the style
+% - Text to which you want to apply the style
 \newcommand\textbith[1]{\thColor{\textbf{\textit{#1}}}}
 
 
 % Text bold and in theme color simultaneously
 %
 % Parameters :
-%   - Text to which you want to apply the style
+% - Text to which you want to apply the style
 \newcommand\textbth[1]{\thColor{\textbf{#1}}}
 
 
 % Text italic and in theme color simultaneously
 %
 % Parameters :
-%   - Text to which you want to apply the style
+% - Text to which you want to apply the style
 \newcommand\textith[1]{\thColor{\textit{#1}}}
+
+
+% Text sc and in theme color simultaneously
+%
+% Parameters :
+% - Text to which you want to apply the style
+\newcommand\textscth[1]{\thColor{\textsc{#1}}}
+
+
+% Apply a text style format by its name as given in the configuration.
+% 
+% Parameters :
+% - Name of the style
+% - Content to which you want to apply the style
+\makeatletter
+\newcommand{\applyTextStyle}[2]{%
+  \ifnum\pdf@strcmp{#1}{textbi}=0%
+  \textbi{#2}%
+  \else\ifnum\pdf@strcmp{#1}{textbic}=0%
+  \textbic{#2}{\currentColor}%
+  \else\ifnum\pdf@strcmp{#1}{textbith}=0%
+  \textbith{#2}%
+  \else\ifnum\pdf@strcmp{#1}{textbth}=0%
+  \textbth{#2}%
+  \else\ifnum\pdf@strcmp{#1}{textith}=0%
+  \textith{#2}%
+  \else\ifnum\pdf@strcmp{#1}{textbf}=0%
+  \textbf{#2}%
+  \else\ifnum\pdf@strcmp{#1}{textit}=0%
+  \textit{#2}%
+  \else\ifnum\pdf@strcmp{#1}{textsc}=0%
+  \textsc{#2}%
+  \else\ifnum\pdf@strcmp{#1}{textscth}=0%
+  \textscth{#2}%
+  \else\ifnum\pdf@strcmp{#1}{textth}=0%
+  \thColor{#2}%
+  \else\ifnum\pdf@strcmp{#1}{basic}=0%
+  #2%
+  \fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi%
+}
+\makeatother

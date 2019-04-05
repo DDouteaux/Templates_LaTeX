@@ -5,35 +5,73 @@
 %                                                                             %
 %%---------------------------------------------------------------------------%%
 
+
 % Apply a section format by its name as given in the configuration
 % of this common module.
 % 
 % Parameters :
 % - Name of the style
-% - Section number
-% - Section label
+% - Section number with style
+% - Section separator with style
+% - Section label with style
 \makeatletter
-\newcommand{\applySectionFormat}[3]{%
+\newcommand{\applySectionFormat}[4]{%
   \ifnum\pdf@strcmp{#1}{default}=0%
-  \sectionBasic{#2}{#3}%
+  \sectionBasic{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{numberInSquare}=0%
-  \sectionNumberInSquare{#2}{#3}%
+  \sectionNumberInSquare{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{greatNumber}=0%
-  \sectionGreatNumber{#2}{#3}%
+  \sectionGreatNumber{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{numberInMargin}=0%
-  \sectionNumberInMargin{#2}{#3}%
+  \sectionNumberInMargin{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{bigFigureAndRule}=0%
-  \sectionBigFigureAndRule{#2}{#3}%
+  \sectionBigFigureAndRule{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{bigFigureAndVerticalRule}=0%
-  \sectionBigFigureAndVerticalRule{#2}{#3}%
+  \sectionBigFigureAndVerticalRule{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{bigFigureAndBackground}=0%
-  \sectionBigFigureColoredBackground{#2}{#3}%
+  \sectionBigFigureColoredBackground{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{backgroundImage}=0%
-  \sectionBackgroundImage{#2}{#3}%
+  \sectionBackgroundImage{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{backgroundImageTransparencyWithTOC}=0%
-  \sectionBackgroundImageTransparency{#2}{#3}%
+  \sectionBackgroundImageTransparency{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{backgroundImageTransparencyNoTOC}=0%
-  \sectionBackgroundImageTransparencyWithoutToc{#2}{#3}%
+  \sectionBackgroundImageTransparencyWithoutToc{#2}{#3}{#4}%
   \fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
 }
 \makeatother
+
+
+% Formatting of section number style from configurations
+%
+% Parameters :
+% - Text style
+% - Text size
+% - Text color
+% - Section number
+\newcommand{\sectionNumberFormating}[4]{%
+  \textcolor{#3}{\applyTextStyle{#1}{#4}}%
+}
+
+
+% Formatting of section separator style from configurations
+%
+% Parameters :
+% - Text style
+% - Text size
+% - Text color
+% - Separator
+\newcommand{\sectionSeparatorFormating}[4]{%
+  \textcolor{#3}{\applyTextStyle{#1}{#4}}
+}
+
+
+% Formatting of section separator style from configurations
+%
+% Parameters :
+% - Text style
+% - Text size
+% - Text color
+% - Section name
+\newcommand{\sectionNameFormating}[4]{%
+  \textcolor{#3}{\applyTextStyle{#1}{#4}}
+}
