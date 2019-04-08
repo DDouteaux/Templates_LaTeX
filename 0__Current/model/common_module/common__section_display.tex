@@ -18,7 +18,7 @@
 \newcommand{\applySectionFormat}[4]{%
   \ifnum\pdf@strcmp{#1}{default}=0%
   \sectionBasic{#2}{#3}{#4}%
-  \ifnum\pdf@strcmp{#1}{defaultNoNumber}=0%
+  \else\ifnum\pdf@strcmp{#1}{defaultNoNumber}=0%
   \sectionBasicNoNumber{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{numberInSquare}=0%
   \sectionNumberInSquare{#2}{#3}{#4}%
