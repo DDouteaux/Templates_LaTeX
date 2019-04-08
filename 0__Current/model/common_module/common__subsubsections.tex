@@ -1,6 +1,14 @@
-% Customize chapter display for our needs.
-% We basically remove all spaces before chapter in order to align it with its expected vertical position.
-% All chapter implementations expect this behaviour.
+%%---------------------------------------------------------------------------%%
+%                                                                             %
+%                             SUBSUBSECTION STYLING                           %
+%                                Module : Common                              %
+%                                                                             %
+%%---------------------------------------------------------------------------%%
+
+
+%
+% Title format of numbered subsubsections. Based on applySectionFormat method.
+%
 \titleformat{\subsubsection}
   {\fontsize{13pt}{0pt}\selectfont}
   {}
@@ -12,4 +20,23 @@
     {\sectionNameFormating{\subsubsectionNameStyle}{\subsubsectionNameSize}{\subsubsectionNameColor}{#1}}%
   }
 
+
+%
+% Title format of numbered subsubsections. Based on applySectionFormat method.
+%
+\titleformat{name=\subsubsection,numberless}
+  {\fontsize{13pt}{0pt}\selectfont}
+  {}
+  {0em}
+  {%
+    \applySectionFormat{\subsubsectionStyle}%
+    {}%
+    {}%
+    {\sectionNameFormating{\subsubsectionNameStyle}{\subsubsectionNameSize}{\subsubsectionNameColor}{#1}}%
+  }
+
+
+%
+% Subsubsection numbering style
+%
 \renewcommand\thesubsubsection{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}

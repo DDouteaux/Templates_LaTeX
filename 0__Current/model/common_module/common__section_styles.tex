@@ -14,7 +14,12 @@
 % - Section label with style
 %
 % Name for configuration : basic
-\newcommand\sectionBasic[3]{#1#2#3}
+\newcommand\sectionBasic[3]{%
+	#1#2#3%
+}
+\newcommand\sectionBasicNoNumber[3]{%
+	\sectionBasic{}{}{#3}%
+}
 
 
 % Style with big figure and section name pushed to the right.
@@ -26,7 +31,10 @@
 %
 % Name for configuration : numberInSquare
 \newcommand\sectionNumberInSquare[3]{%
-	\hspace*{\sectionLeftSpace}\textcolor{\currentColor}{\fbox{#1}}#2#3
+	\hspace*{\sectionLeftSpace}\textcolor{\currentColor}{\fbox{#1}}#2#3%
+}
+\newcommand\sectionNumberInSquareNoNumber[3]{%
+	\hspace*{\sectionLeftSpace}#3%
 }
 
 
@@ -40,10 +48,13 @@
 %
 % Name for configuration : greatNumber
 \newcommand\sectionGreatNumber[3]{%
-  \noindent%
-  \fontsize{30}{1}\selectfont%
-  {\Huge{#1#2}}
-  \fontsize{15}{1}\selectfont#3\par%
+	\noindent%
+	\fontsize{30}{1}\selectfont%
+	{\Huge{#1#2}}
+	\fontsize{15}{1}\selectfont#3\par%
+}
+\newcommand\sectionGreatNumberNoNumber[3]{%
+	\sectionGreatNumber{}{}{#3}
 }
 
 
@@ -59,6 +70,9 @@
 \newcommand\sectionNumberInMargin[3]{
 	\begin{changemargin}{-1cm}{0cm}#1#2#3\end{changemargin}
 	\vspace*{-.25cm}
+}
+\newcommand\sectionNumberInMarginNoNumber[3]{
+	\sectionNumberInMarginNoNumber{}{}{#3}
 }
 
 
@@ -82,6 +96,9 @@
 	\end{flushright}
 	\vspace*{1.5cm}
 }
+\newcommand\sectionBigFigureAndRuleNoNumber[3]{
+	\sectionBigFigureAndRule{}{}{#3}
+}
 
 
 % Chapter style with big figure and chapter name pushed to the right.
@@ -102,6 +119,9 @@
 		\rule{13cm}{1pt}
 	\end{flushright}
 }
+\newcommand\sectionBigFigureAndVerticalRuleNoNumber[3]{
+	\sectionBigFigureAndVerticalRule{}{}{#3}
+}
 
 
 % Similar to chapterBigFigureAndVerticalRule but with a uniform currentColor background.
@@ -119,6 +139,9 @@
 	\begin{changemargin}{-1.5cm}{-1.5cm}
 		\noindent\textcolor{-red!75!green!50}{\rule{\paperwidth}{8cm}}\hspace*{-3cm}\textcolor{white}{\rule{1.5pt}{7cm}}\newline
 	\end{changemargin}
+}
+\newcommand\sectionBigFigureColoredBackgroundNoNumber[3]{
+	\sectionBigFigureColoredBackground{}{}{#3}
 }
 
 
@@ -151,6 +174,9 @@
 		\end{tikzpicture}%
 	\end{changemargin}
 }
+\newcommand\sectionBackgroundImageNoNumber[3]{
+	\sectionBackgroundImage{}{}{#3}
+}
 
 
 % Chapter style with background made with an image. The chapter number and name
@@ -162,7 +188,7 @@
 % - Section separator with style
 % - Section label with style
 %
-% Name for configuration : backgroundImageTransparencyWithTOC
+% Name for configuration : backgroundImageTransparencyWithTOCw
 \newcommand\sectionBackgroundImageTransparency[3]{
 	\vspace*{-2.8cm}%
 	\begin{changemargin}{-1.5cm}{-1.5cm}
@@ -181,6 +207,9 @@
 		\end{tikzpicture}%
 	\end{changemargin}
 	\vskip .5cm
+}
+\newcommand\sectionBackgroundImageTransparencyNoNumber[3]{
+	\sectionBackgroundImageTransparency{}{}{#3}
 }
 
 
@@ -210,4 +239,7 @@
 		  \end{pgfonlayer}%
 		\end{tikzpicture}%
 	\end{changemargin}
+}
+\newcommand\sectionBackgroundImageTransparencyWithoutTocNoNumber[3]{
+	\sectionBackgroundImageTransparencyWithoutToc{}{}{#3}
 }

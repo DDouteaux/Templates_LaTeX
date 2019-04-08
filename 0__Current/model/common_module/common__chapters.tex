@@ -1,6 +1,19 @@
-% Customize chapter display for our needs.
-% We basically remove all spaces before chapter in order to align it with its expected vertical position.
-% All chapter implementations expect this behaviour.
+%%---------------------------------------------------------------------------%%
+%                                                                             %
+%                                CHAPTER STYLING                              %
+%                                Module : Common                              %
+%                                                                             %
+%%---------------------------------------------------------------------------%%
+
+
+% Remove all spaces before chapter in order to align it with its expected vertical position.
+% Use styles that are compatible with these values for optimal rendering.
+\titlespacing*{\chapter}{0em}{0em}{0em}[0em]
+
+
+%
+% Title format of numbered chapters. Based on applySectionFormat method.
+%
 \titleformat{\chapter}
   {\fontsize{17pt}{0pt}\selectfont}
   {}
@@ -12,19 +25,23 @@
     {\sectionNameFormating{\chapterNameStyle}{\chapterNameSize}{\chapterNameColor}{#1}}%
   }
 
-\titlespacing*{\chapter}{0em}{0em}{0em}[0em]
 
+%
+% Title format of unnumbered chapters. Based on applySectionFormat method.
+%
 \titleformat{name=\chapter,numberless}
   {\fontsize{17pt}{0pt}\selectfont}
   {}
   {0em}
   {%
     \applySectionFormat{\chapterStyle}%
-    {\sectionNumberFormating{\chapterNumberStyle}{\chapterNumberSize}{\chapterNumberColor}{\thechapter}}%
-    {\sectionSeparatorFormating{\chapterSeparatorStyle}{\chapterSeparatorSize}{\chapterSeparatorColor}{\chapterSeparator}}%
+    {}%
+    {}%
     {\sectionNameFormating{\chapterNameStyle}{\chapterNameSize}{\chapterNameColor}{#1}}%
   }
 
+
+%
 % Chapters partial toc style
 %
 \titlecontents{lsection}[.2cm]

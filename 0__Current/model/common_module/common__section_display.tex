@@ -18,25 +18,45 @@
 \newcommand{\applySectionFormat}[4]{%
   \ifnum\pdf@strcmp{#1}{default}=0%
   \sectionBasic{#2}{#3}{#4}%
+  \ifnum\pdf@strcmp{#1}{defaultNoNumber}=0%
+  \sectionBasicNoNumber{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{numberInSquare}=0%
   \sectionNumberInSquare{#2}{#3}{#4}%
+  \else\ifnum\pdf@strcmp{#1}{numberInSquareNoNumber}=0%
+  \sectionNumberInSquareNoNumber{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{greatNumber}=0%
   \sectionGreatNumber{#2}{#3}{#4}%
+  \else\ifnum\pdf@strcmp{#1}{greatNumberNoNumber}=0%
+  \sectionGreatNumberNoNumber{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{numberInMargin}=0%
   \sectionNumberInMargin{#2}{#3}{#4}%
+  \else\ifnum\pdf@strcmp{#1}{numberInMarginNoNumber}=0%
+  \sectionNumberInMarginNoNumber{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{bigFigureAndRule}=0%
   \sectionBigFigureAndRule{#2}{#3}{#4}%
+  \else\ifnum\pdf@strcmp{#1}{bigFigureAndRuleNoNumber}=0%
+  \sectionBigFigureAndRuleNoNumber{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{bigFigureAndVerticalRule}=0%
   \sectionBigFigureAndVerticalRule{#2}{#3}{#4}%
+  \else\ifnum\pdf@strcmp{#1}{bigFigureAndVerticalRuleNoNumber}=0%
+  \sectionBigFigureAndVerticalRuleNoNumber{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{bigFigureAndBackground}=0%
   \sectionBigFigureColoredBackground{#2}{#3}{#4}%
+  \else\ifnum\pdf@strcmp{#1}{bigFigureAndBackgroundNoNumber}=0%
+  \sectionBigFigureColoredBackgroundNoNumber{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{backgroundImage}=0%
   \sectionBackgroundImage{#2}{#3}{#4}%
+  \else\ifnum\pdf@strcmp{#1}{backgroundImageNoNumber}=0%
+  \sectionBackgroundImageNoNumber{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{backgroundImageTransparencyWithTOC}=0%
   \sectionBackgroundImageTransparency{#2}{#3}{#4}%
+  \else\ifnum\pdf@strcmp{#1}{backgroundImageTransparencyWithTOCNoNumber}=0%
+  \sectionBackgroundImageTransparencyNoNumber{#2}{#3}{#4}%
   \else\ifnum\pdf@strcmp{#1}{backgroundImageTransparencyNoTOC}=0%
   \sectionBackgroundImageTransparencyWithoutToc{#2}{#3}{#4}%
-  \fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
+  \else\ifnum\pdf@strcmp{#1}{backgroundImageTransparencyNoTOCNoNumber}=0%
+  \sectionBackgroundImageTransparencyWithoutTocNoNumber{#2}{#3}{#4}%
+  \fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi\fi
 }
 \makeatother
 

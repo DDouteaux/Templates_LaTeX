@@ -1,6 +1,13 @@
-% Customize chapter display for our needs.
-% We basically remove all spaces before chapter in order to align it with its expected vertical position.
-% All chapter implementations expect this behaviour.
+%%---------------------------------------------------------------------------%%
+%                                                                             %
+%                                SECTION STYLING                              %
+%                                Module : Common                              %
+%                                                                             %
+%%---------------------------------------------------------------------------%%
+
+%
+% Title format of numbered sections. Based on applySectionFormat method.
+%
 \titleformat{\section}  
   {\fontsize{17pt}{0pt}\selectfont}
   {}
@@ -12,4 +19,22 @@
       {\sectionNameFormating{\sectionNameStyle}{\sectionNameSize}{\sectionNameColor}{#1}}%
   }
 
+%
+% Title format of unnumbered sections. Based on applySectionFormat method.
+%
+\titleformat{name=\section,numberless}  
+{\fontsize{17pt}{0pt}\selectfont}
+{}
+{0em}
+{%
+  \applySectionFormat{\sectionStyle NoNumber}%
+    {}%
+    {}%
+    {\sectionNameFormating{\sectionNameStyle}{\sectionNameSize}{\sectionNameColor}{#1}}%
+}
+
+
+%
+% Section numbering style
+%
 \renewcommand\thesection{\arabic{section}}
