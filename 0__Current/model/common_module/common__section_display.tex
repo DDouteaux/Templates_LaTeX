@@ -69,7 +69,9 @@
 % - Text color
 % - Section number
 \newcommand{\sectionNumberFormating}[4]{%
+  \renewcommand{\currentColor}{#3}%
   \textcolor{#3}{\applyTextStyle{#1}{#4}}%
+  \renewcommand{\currentColor}{\themeColor}%
 }
 
 
@@ -81,7 +83,9 @@
 % - Text color
 % - Separator
 \newcommand{\sectionSeparatorFormating}[4]{%
-  \textcolor{#3}{\applyTextStyle{#1}{#4}}
+  \renewcommand{\currentColor}{#3}%
+  \textcolor{#3}{\applyTextStyle{#1}{#4}}%
+  \renewcommand{\currentColor}{\themeColor}%
 }
 
 
@@ -93,5 +97,7 @@
 % - Text color
 % - Section name
 \newcommand{\sectionNameFormating}[4]{%
-  \textcolor{#3}{\applyTextStyle{#1}{#4}}
+  \renewcommand{\currentColor}{#3}%
+  \textcolor{#3}{\applyTextStyle{#1}{#4}}%
+  \renewcommand{\currentColor}{\themeColor}%
 }

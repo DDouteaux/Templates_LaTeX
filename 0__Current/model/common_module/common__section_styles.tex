@@ -197,9 +197,9 @@
 		  \pgfdeclarelayer{foreground}%
 		  \pgfsetlayers{background,foreground}%
 		  \begin{pgfonlayer}{foreground}%
-			\node (separator) [color=white, fill=blue, opacity=0, draw, rectangle, minimum width=21cm, inner sep=1pt] at (-10.5,0) {};%
-			\node (section_name) [fill=white, opacity=.55, text opacity=1, text width=\paperwidth, anchor=west, font=\fontsize{25}{1}\selectfont, inner sep=.4cm, text depth=.35ex] at (-21,8.25) {\thColor{\textbf{#1#2#3}}};%
-			\node (section_toc)  [rounded corners, fill=white, draw=blue, fill opacity=.55, text opacity=1, minimum height=7cm, text width=.55\paperwidth, anchor=north west, inner sep=.2cm] at (-12.25,6.25) {\normalsize\begin{minipage}{\linewidth}\startcontents\printcontents{l}{1}{\setcounter{tocdepth}{1}}\end{minipage}};%
+			\node (separator) [color=white, fill=\currentColor, opacity=0, draw, rectangle, minimum width=21cm, inner sep=1pt] at (-10.5,0) {};%
+			\node (section_name) [fill=white, opacity=.55, text opacity=1, text width=\paperwidth, anchor=west, font=\fontsize{25}{1}\selectfont, inner sep=.4cm, text depth=.35ex] at (-21,8.25) {#1#2#3};%
+			\node (section_toc)  [rounded corners, fill=white, draw=\currentColor, fill opacity=.55, text opacity=1, minimum height=7cm, text width=.55\paperwidth, anchor=north west, inner sep=.2cm] at (-12.25,6.25) {\normalsize\begin{minipage}{\linewidth}\startcontents\printcontents{l}{1}{\setcounter{tocdepth}{1}}\end{minipage}};%
 		  \end{pgfonlayer}%
 		  \begin{pgfonlayer}{background}%
 			\path [fill tile image*={width=\paperwidth}{images/default4.JPG}] (-21,10) rectangle (0,0);%
@@ -231,11 +231,11 @@
 		  \pgfdeclarelayer{foreground}%
 		  \pgfsetlayers{background,foreground}%
 		  \begin{pgfonlayer}{foreground}%
-			\node (separator) [color=white, fill=blue, opacity=0, draw, rectangle, minimum width=21cm, inner sep=1pt] at (-10.5,0) {};%
-			\node (section_name) [fill=white, opacity=.55, text opacity=1, text width=\paperwidth, anchor=west, font=\fontsize{25}{1}\selectfont, inner sep=.4cm, text depth=.35ex] at (-21,8.25) {\thColor{\textbf{#1#2#3}}};%
+			\node (separator) [color=white, fill=\currentColor, opacity=0, draw, rectangle, minimum width=21cm, inner sep=1pt] at (-10.5,0) {};%
+			\node (section_name) [fill=white, opacity=.55, text opacity=1, text width=\paperwidth, anchor=west, font=\fontsize{25}{1}\selectfont, inner sep=.4cm, text depth=.35ex] at (-21,8.25) {#1#2#3};%
 		  \end{pgfonlayer}%
 		  \begin{pgfonlayer}{background}%
-			\path [fill tile image*={width=\paperwidth}{images/default4.JPG}] (-21,10) rectangle (0,0);%
+			\path [fill tile image*={width=\paperwidth}{\sectionImage}] (-21,10) rectangle (0,0);%
 		  \end{pgfonlayer}%
 		\end{tikzpicture}%
 	\end{changemargin}
