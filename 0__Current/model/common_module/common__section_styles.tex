@@ -202,7 +202,7 @@
 			\node (section_toc)  [rounded corners, fill=white, draw=\currentColor, fill opacity=.55, text opacity=1, minimum height=7cm, text width=.55\paperwidth, anchor=north west, inner sep=.2cm] at (-12.25,6.25) {\normalsize\begin{minipage}{\linewidth}\startcontents\printcontents{l}{1}{\setcounter{tocdepth}{1}}\end{minipage}};%
 		  \end{pgfonlayer}%
 		  \begin{pgfonlayer}{background}%
-			\path [fill tile image*={width=\paperwidth}{images/default4.JPG}] (-21,10) rectangle (0,0);%
+			\path [fill tile image*={width=\paperwidth}{\sectionImage}] (-21,10) rectangle (0,0);%
 		  \end{pgfonlayer}%
 		\end{tikzpicture}%
 	\end{changemargin}
